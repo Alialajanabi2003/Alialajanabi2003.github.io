@@ -183,7 +183,7 @@ fbq('track', 'PageView');
     <div class="card upd" id="macupdate">
       <h2>عندك راوي على الماك؟ حدّثه بسطر واحد</h2>
       <p class="s">افتح <b>Terminal</b>، والصق هذا السطر واضغط <bdi>Enter</bdi>. ينزّل بس الملفات اللي تغيّرت، ويتأكد من كل ملف قبل ما يبدّلها، والتفعيل يبقى. إذا راوي محدّث يكلك وما ينزّل شي، وإذا <bdi>After Effects</bdi> أو <bdi>Premiere Pro</bdi> مفتوح ينتظرك تسكّره.</p>
-      <code class="cmd" id="macCmd">curl -fsSL https://rawiplugin.com/mac-update.sh | bash</code>
+      <code class="cmd" id="macCmd">curl -fsSL https://alialajanabi2003.github.io/mac-update.sh | bash</code>
       <button type="button" class="cpy" id="macCopy">انسخ السطر</button>
     </div>
     <div class="card">
@@ -243,7 +243,7 @@ fbq('track', 'PageView');
   [].forEach.call(document.querySelectorAll('a[href*="Rawi-Manual.zip"]'), function (a) { a.addEventListener('click', function () { if (!mobile) track('Lead', { content_name: 'Rawi-Manual.zip', content_category: 'download' }, false, true); }); });
   [].forEach.call(document.querySelectorAll('.buybtn'), function (a) { a.addEventListener('click', function () { track('InitiateCheckout', { value: 35000, currency: 'IQD', content_name: 'Rawi Subscription', content_category: 'download_page' }); }); });
   (function () {
-    var url = 'https://rawiplugin.com/download', sh = document.getElementById('mobShare'), cp = document.getElementById('mobCopy');
+    var url = 'https://alialajanabi2003.github.io/download/', sh = document.getElementById('mobShare'), cp = document.getElementById('mobCopy');
     sh.addEventListener('click', function () {
       track('MobileHandoff', { how: 'share' }, true);
       if (navigator.share) navigator.share({ title: T('راوي — إضافة After Effects و Premiere Pro'), text: T('حمّل راوي من الكمبيوتر:'), url: url }).catch(function () {});
