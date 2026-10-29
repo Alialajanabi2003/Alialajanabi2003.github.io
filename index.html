@@ -1,0 +1,630 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#0A1317">
+<meta property="og:title" content="Rawi راوي — مونتاج عربي تلقائي لـ After Effects و Premiere Pro">
+<meta property="og:description" content="تحچي، وراوي يسوّي المونتاج: كابشن عربي، قوائم، أرقام، مشاهد فيسلس وانتقالات بضغطة وحدة.">
+<meta property="og:image" content="assets/demo1.jpg">
+<title>Rawi راوي</title>
+<meta name="description" content="راوي Rawi: إضافة عربية لـ After Effects و Premiere Pro تسوي المونتاج من الكلام: كابشن عربي، مشاهد فيسلس، ومكتبة موشن تتعدل من التايم لاين.">
+<link rel="icon" href="assets/rawi-mark.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Alexandria:wght@500;700;800;900&family=IBM+Plex+Sans+Arabic:wght@400;500;600;700&family=IBM+Plex+Mono:wght@500;600&display=swap">
+<style>
+  /* One visual world: the dark blue of a clinic set at night, lit by the mint of Rawi and the yellow of a caption keyword. */
+  :root {
+    color-scheme: dark;
+    --night: #0A1317;
+    --deep: #0E1B21;
+    --panel: #12242B;
+    --line: rgba(137, 170, 176, 0.16);
+    --line-2: rgba(137, 170, 176, 0.28);
+    --text: #EAF3F2;
+    --muted: #8FA9AD;
+    --mint: #7CF2C8;
+    --mint-ink: #052A1F;
+    --key: #FFD84D;
+    --key-ink: #2B2200;
+    --display: "Alexandria", "IBM Plex Sans Arabic", "Segoe UI", Tahoma, sans-serif;
+    --body: "IBM Plex Sans Arabic", "Segoe UI", Tahoma, sans-serif;
+    --mono: "IBM Plex Mono", ui-monospace, Consolas, monospace;
+    --r: 18px;
+  }
+  * { box-sizing: border-box; }
+  html, body { direction: rtl; }
+  html { scroll-behavior: smooth; }
+  body { margin: 0; background: var(--night); color: var(--text); font: 400 16px/1.75 var(--body); -webkit-font-smoothing: antialiased; }
+  a { color: inherit; }
+  img, video { max-width: 100%; display: block; }
+  .wrap { max-width: 1120px; margin-inline: auto; padding-inline: 20px; }
+  :focus-visible { outline: 2px solid var(--mint); outline-offset: 3px; border-radius: 8px; }
+
+  /* ---------- top bar */
+  .top { position: sticky; top: env(safe-area-inset-top, 0px); z-index: 20; background: color-mix(in srgb, var(--night) 82%, transparent); backdrop-filter: blur(14px); border-bottom: 1px solid var(--line); }
+  .top .wrap { display: flex; align-items: center; gap: 14px; padding-block: 12px; }
+  .brand { display: flex; align-items: center; gap: 10px; text-decoration: none; }
+  .mark { width: 38px; height: 38px; border-radius: 12px; background: linear-gradient(145deg, #9BF7D6, #34CFA0); color: var(--mint-ink); display: grid; place-items: center; flex: none; box-shadow: 0 6px 18px rgba(124, 242, 200, 0.22); }
+  .mark svg { width: 30px; height: 30px; }
+  .brand b { font: 800 20px/1 var(--display); letter-spacing: 0.3px; }
+  .brand small { display: block; font: 500 12px/1 var(--body); color: var(--muted); margin-top: 4px; }
+  .top nav { margin-inline-start: auto; display: flex; gap: 18px; font-size: 14px; color: var(--muted); }
+  .top nav a { text-decoration: none; }
+  .top nav a:hover { color: var(--text); }
+  .btn { display: inline-flex; align-items: center; gap: 8px; border-radius: 13px; padding: 12px 20px; font: 700 15px/1.2 var(--body); text-decoration: none; border: 1px solid transparent; cursor: pointer; transition: transform .2s, box-shadow .2s, background .2s; }
+  .btn svg { width: 18px; height: 18px; flex: none; }
+  .btn.tg { background: #229ED9; color: #fff; box-shadow: 0 10px 26px rgba(34, 158, 217, 0.22); }
+  .btn.tg:hover { transform: translateY(-2px); box-shadow: 0 14px 30px rgba(34, 158, 217, 0.3); }
+  .btn.line { border-color: var(--line-2); color: var(--text); background: rgba(255, 255, 255, 0.02); }
+  .btn.line:hover { border-color: var(--mint); color: var(--mint); }
+  .btn.sm { padding: 9px 14px; font-size: 13.5px; border-radius: 11px; }
+  .btn.dl { background: linear-gradient(145deg, #9BF7D6, #34CFA0); color: var(--mint-ink); box-shadow: 0 10px 26px rgba(124, 242, 200, 0.22); }
+  .btn.buy { background: #FFD84D; color: #1d1600; border-color: transparent; }
+  .btn.buy:hover { filter: brightness(1.06); }
+  .btn.dl:hover { transform: translateY(-2px); box-shadow: 0 14px 30px rgba(124, 242, 200, 0.32); }
+  /* download card */
+  .dlbox { display: grid; grid-template-columns: 1.05fr 1fr; gap: 0; border-radius: 24px; overflow: hidden; border: 1px solid rgba(124, 242, 200, 0.35); background: linear-gradient(135deg, #10262A, #0C171C); }
+  .dlbox .a { padding: 30px 28px; }
+  .dlbox .b { padding: 30px 28px; background: rgba(0, 0, 0, 0.18); border-inline-start: 1px solid var(--line); }
+  .dlbox h3 { margin: 0 0 6px; font: 800 26px/1.4 var(--display); }
+  .dlmeta { display: flex; flex-wrap: wrap; gap: 8px; margin: 14px 0 22px; }
+  .dlmeta span { font: 500 13px/1 var(--body); color: var(--text); border: 1px solid var(--line-2); border-radius: 999px; padding: 8px 12px; background: rgba(255, 255, 255, 0.03); }
+  .dlmeta span.v { font-family: var(--mono); direction: ltr; }
+  .dlbox ol { margin: 0; padding: 0; list-style: none; counter-reset: d; display: grid; gap: 14px; }
+  .dlbox li { display: grid; grid-template-columns: 30px 1fr; gap: 12px; align-items: start; color: var(--muted); font-size: 15px; line-height: 1.85; }
+  .dlbox li::before { counter-increment: d; content: counter(d); font: 800 14px/1 var(--display); color: var(--mint-ink); background: var(--mint); width: 30px; height: 30px; border-radius: 9px; display: grid; place-items: center; }
+  .dlbox li b { color: var(--text); font-weight: 700; }
+  .dlnote { margin-top: 18px; font-size: 13.5px; line-height: 1.9; color: var(--muted); border: 1px dashed rgba(255, 216, 77, 0.35); border-radius: 12px; padding: 10px 12px; background: rgba(255, 216, 77, 0.04); }
+  .dlnote code { font-family: var(--mono); direction: ltr; unicode-bidi: isolate; color: var(--text); }
+  @media (max-width: 820px) { .dlbox { grid-template-columns: 1fr; } .dlbox .b { border-inline-start: 0; border-top: 1px solid var(--line); } }
+  @media (max-width: 720px) { .top nav { display: none; } .top .btn.sm span.long { display: none; } }
+
+  /* ---------- hero */
+  .hero { position: relative; padding-block: 56px 26px; overflow: hidden; }
+  .hero::before { content: ""; position: absolute; inset: -30% -10% auto; height: 620px; background: radial-gradient(50% 50% at 70% 40%, rgba(124, 242, 200, 0.13), transparent 70%), radial-gradient(40% 50% at 15% 30%, rgba(62, 140, 200, 0.16), transparent 70%); pointer-events: none; }
+  .hero .wrap { position: relative; }
+  .eyebrow { display: inline-flex; align-items: center; gap: 8px; font: 600 12.5px/1 var(--mono); color: var(--mint); letter-spacing: 0.6px; padding: 7px 12px; border: 1px solid rgba(124, 242, 200, 0.3); border-radius: 99px; background: rgba(124, 242, 200, 0.06); direction: ltr; }
+  .apps { display: flex; flex-wrap: wrap; align-items: center; gap: 8px; margin-top: 14px; }
+  .apps .lbl { font-size: 13px; color: var(--muted); }
+  .app { display: inline-flex; align-items: center; gap: 8px; padding: 7px 14px; border-radius: 12px; font: 600 14px/1 var(--mono); direction: ltr; color: #fff; background: rgba(255, 255, 255, 0.05); border: 1px solid rgba(255, 255, 255, 0.14); }
+  .app i { width: 9px; height: 9px; border-radius: 50%; }
+  .app.ae { border-color: rgba(153, 153, 255, 0.45); } .app.ae i { background: #9999FF; box-shadow: 0 0 0 4px rgba(153, 153, 255, 0.18); }
+  .app.pr { border-color: rgba(201, 184, 255, 0.45); background: rgba(123, 92, 255, 0.14); } .app.pr i { background: #C9B8FF; box-shadow: 0 0 0 4px rgba(201, 184, 255, 0.2); }
+  .eyebrow i { width: 7px; height: 7px; border-radius: 50%; background: var(--mint); box-shadow: 0 0 0 4px rgba(124, 242, 200, 0.18); }
+  h1 { font: 900 clamp(38px, 6.6vw, 76px)/1.5 var(--display); margin: 22px 0 18px; letter-spacing: -0.5px; text-wrap: balance; max-width: 15ch; }
+  /* the keyword treatment Rawi's captions use: a yellow word box */
+  .kw { background: var(--key); color: var(--key-ink); padding: 0.02em 0.2em 0.1em; border-radius: 0.16em; box-decoration-break: clone; -webkit-box-decoration-break: clone; }
+  .lead { line-height: 1.95; font-size: clamp(16px, 1.9vw, 19px); color: var(--muted); max-width: 56ch; margin: 0 0 26px; text-wrap: pretty; }
+  .lead b { color: var(--text); font-weight: 600; }
+  .ctas { display: flex; flex-wrap: wrap; gap: 12px; align-items: center; }
+  .note { font-size: 13px; color: var(--muted); margin-top: 12px; }
+  .ltrnum { direction: ltr; unicode-bidi: isolate; font-family: var(--mono); color: var(--text); white-space: nowrap; }
+
+  /* timeline: the three demos sit on a track under a timecode ruler, like clips in After Effects */
+  .timeline { margin-top: 44px; border: 1px solid var(--line); border-radius: 22px; background: linear-gradient(180deg, var(--deep), #0B161B); padding: 14px 14px 18px; position: relative; }
+  .ruler { display: flex; justify-content: space-between; font: 500 11px/1 var(--mono); color: #5E777B; direction: ltr; padding: 2px 6px 10px; border-bottom: 1px solid var(--line); margin-bottom: 14px; }
+  .ruler span { position: relative; }
+  .ruler span::after { content: ""; position: absolute; left: 50%; top: 16px; width: 1px; height: 6px; background: #3B5156; }
+  .track { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 14px; direction: ltr; }
+  .clip { position: relative; border-radius: 16px; overflow: hidden; background: #081014; aspect-ratio: 9 / 16; border: 1px solid var(--line); max-width: 100%; }
+  .clip video { width: 100%; height: 100%; object-fit: cover; }
+  .clip, .fig { position: relative; cursor: pointer; }
+  .vplay { position: absolute; left: 50%; top: 50%; width: 58px; height: 58px; margin: -29px 0 0 -29px; border: 0; border-radius: 50%; background: rgba(124, 242, 200, 0.92); color: var(--mint-ink); display: grid; place-items: center; box-shadow: 0 10px 28px rgba(0, 0, 0, 0.45); cursor: pointer; transition: opacity .2s, transform .2s; }
+  .vplay svg { width: 26px; height: 26px; margin-left: 3px; }
+  .playing .vplay { opacity: 0; transform: scale(.8); pointer-events: none; }
+  .clip .tag { position: absolute; top: 10px; left: 10px; font: 600 11px/1 var(--mono); color: #CFE6E2; background: rgba(5, 12, 15, 0.6); backdrop-filter: blur(6px); padding: 6px 8px; border-radius: 8px; direction: ltr; }
+  .playhead { position: absolute; top: 8px; bottom: 8px; width: 2px; background: var(--key); box-shadow: 0 0 12px rgba(255, 216, 77, 0.6); left: 8%; animation: sweep 12s linear infinite; pointer-events: none; }
+  .playhead::before { content: ""; position: absolute; top: -2px; left: -6px; border: 7px solid transparent; border-top: 9px solid var(--key); }
+  @keyframes sweep { from { left: 2%; } to { left: 98%; } }
+  @media (max-width: 720px) {
+    .track { grid-template-columns: repeat(3, 72%); overflow-x: auto; scroll-snap-type: x mandatory; padding-bottom: 6px; }
+    .clip { scroll-snap-align: center; }
+    .playhead { display: none; }
+    .ruler span:nth-child(2), .ruler span:nth-child(4) { display: none; }
+  }
+  @media (prefers-reduced-motion: reduce) { .playhead { animation: none; } html { scroll-behavior: auto; } }
+
+  /* ---------- sections */
+  section { padding-block: 72px 10px; }
+  .sh { display: flex; flex-wrap: wrap; align-items: end; justify-content: space-between; gap: 12px; margin-bottom: 26px; }
+  h2 { font: 800 clamp(28px, 4vw, 42px)/1.5 var(--display); margin: 0; text-wrap: balance; }
+  .sh p { margin: 0; color: var(--muted); max-width: 48ch; }
+  .label { font: 600 12px/1 var(--mono); color: var(--mint); letter-spacing: 0.8px; direction: ltr; display: inline-block; margin-bottom: 10px; }
+
+  /* what it does: each capability is a layer in the timeline (layer colour, layer name, the job it does) */
+  .layers { border: 1px solid var(--line); border-radius: var(--r); overflow: hidden; background: var(--deep); }
+  .layer { display: grid; grid-template-columns: 210px 1fr; gap: 0; border-top: 1px solid var(--line); }
+  .layer:first-child { border-top: 0; }
+  .lname { display: flex; gap: 12px; align-items: flex-start; padding: 22px 20px; border-inline-end: 1px solid var(--line); background: rgba(255, 255, 255, 0.015); }
+  .lname i { width: 12px; height: 12px; border-radius: 3px; margin-top: 7px; flex: none; }
+  .lname b { display: block; font: 700 18px/1.6 var(--display); }
+  .lname code { font: 500 11.5px/1 var(--mono); color: #6E888C; direction: ltr; display: inline-block; margin-top: 6px; }
+  .lbody { padding: 22px 22px 24px; display: grid; grid-template-columns: 1fr auto; gap: 18px; align-items: center; }
+  .lbody p { margin: 0 0 14px; color: #C6D8D7; max-width: 60ch; line-height: 1.95; }
+  .chips { display: flex; flex-wrap: wrap; gap: 6px; }
+  .chip { font-size: 12.5px; padding: 4px 10px; border-radius: 99px; background: rgba(255, 255, 255, 0.04); border: 1px solid var(--line); color: var(--muted); }
+  .bar { height: 26px; border-radius: 7px; min-width: 120px; opacity: 0.9; position: relative; overflow: hidden; }
+  .bar::after { content: ""; position: absolute; inset: 0; background: repeating-linear-gradient(90deg, rgba(0,0,0,.14) 0 1px, transparent 1px 14px); }
+  .fig { width: 150px; border-radius: 14px; overflow: hidden; border: 1px solid var(--line); aspect-ratio: 9 / 16; background: #081014; }
+  .fig video, .fig img { width: 100%; height: 100%; object-fit: cover; }
+  @media (max-width: 820px) {
+    .layer { grid-template-columns: 1fr; }
+    .lname { border-inline-end: 0; border-bottom: 1px solid var(--line); padding-block: 16px; }
+    .lbody { grid-template-columns: 1fr; }
+    .fig { width: 100%; max-width: 260px; }
+  }
+
+  /* inside After Effects */
+  .inside { display: grid; gap: 28px; }
+  .shot { border-radius: 20px; overflow: hidden; border: 1px solid var(--line-2); box-shadow: 0 30px 70px rgba(0, 0, 0, 0.45); }
+  .shot img { width: 100%; height: auto; }
+  .points { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 18px; }
+  @media (max-width: 900px) { .points { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+  @media (max-width: 560px) { .points { grid-template-columns: 1fr; } }
+  .pt { display: grid; grid-template-columns: 34px 1fr; gap: 12px; }
+  .pt svg { width: 22px; height: 22px; color: var(--mint); margin-top: 4px; }
+  .pt b { display: block; font: 700 17px/1.7 var(--display); }
+  .pt span { color: var(--muted); font-size: 15px; }
+  .path { font: 500 13px/1.6 var(--mono); direction: ltr; display: inline-block; color: var(--text); background: rgba(255,255,255,.05); border: 1px solid var(--line); padding: 2px 8px; border-radius: 7px; }
+
+  /* how to get it: a real sequence */
+  .steps { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 14px; counter-reset: s; }
+  .step { border: 1px solid var(--line); border-radius: var(--r); padding: 22px 20px; background: var(--deep); position: relative; }
+  .step::before { counter-increment: s; content: counter(s); font: 800 15px/1 var(--display); color: var(--mint-ink); background: var(--mint); width: 32px; height: 32px; border-radius: 10px; display: grid; place-items: center; margin-bottom: 14px; }
+  .step b { display: block; font: 700 19px/1.6 var(--display); margin-bottom: 6px; }
+  .step p { margin: 0; color: var(--muted); font-size: 15px; line-height: 1.9; }
+  .dev { display: inline-block; margin-top: 12px; font: 600 16px/1 var(--mono); letter-spacing: 2px; direction: ltr; padding: 10px 12px; border-radius: 10px; border: 1px dashed rgba(124, 242, 200, 0.45); color: var(--text); background: rgba(124, 242, 200, 0.05); }
+  @media (max-width: 820px) { .steps { grid-template-columns: 1fr; } }
+
+  /* pricing: yearly + monthly + lifetime; ≈ USD / EGP under each price (Ali 2026-10-26) */
+  .price { display: grid; grid-template-columns: 1.1fr 1fr; gap: 0; border-radius: 24px; overflow: hidden; border: 1px solid rgba(124, 242, 200, 0.35); background: linear-gradient(135deg, #10262A, #0C171C); }
+  .price .a { padding: 30px 28px; }
+  .price .b { padding: 30px 28px; background: rgba(124, 242, 200, 0.05); border-inline-start: 1px solid var(--line); display: flex; flex-direction: column; gap: 12px; justify-content: center; }
+  .plan { font: 600 13px/1 var(--mono); color: var(--mint); letter-spacing: 1px; direction: ltr; display: inline-block; }
+  .amount { font: 900 clamp(34px, 5vw, 50px)/1.15 var(--display); margin: 10px 0 4px; font-variant-numeric: tabular-nums; }
+  .amount small { font: 600 16px var(--body); color: var(--muted); }
+  .amount .was { font-size: 0.55em; color: var(--muted); font-weight: 700; text-decoration-thickness: 3px; text-decoration-color: rgba(255, 120, 120, 0.8); margin-inline-end: 6px; }
+  .amount .off { display: inline-block; vertical-align: middle; font: 700 14px/1 var(--body); color: var(--key-ink); background: var(--key); padding: 7px 10px; border-radius: 99px; margin-inline-start: 8px; }
+  .plans { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-bottom: 14px; }
+  .pl { position: relative; border: 1px solid var(--line-2); border-radius: 16px; padding: 16px 16px 14px; }
+  .pl.best { border-color: rgba(124, 242, 200, 0.55); background: rgba(124, 242, 200, 0.06); }
+  .pl .tag { position: absolute; top: 12px; inset-inline-end: 12px; font: 700 12px/1 var(--body); color: var(--key-ink); background: var(--key); padding: 6px 9px; border-radius: 99px; }
+  .pl .amount { font-size: clamp(26px, 3vw, 34px); margin: 10px 0 2px; white-space: nowrap; }
+  .pl .amount small { font-size: 14px; white-space: nowrap; }
+  .pl .per { color: var(--muted); font-size: 13.5px; }
+  .pl .fx { color: #C6D8D7; font-size: 13.5px; margin: 0 0 4px; font-variant-numeric: tabular-nums; }
+  .pl .fx bdi { white-space: nowrap; }
+  .pl.life { grid-column: 1 / -1; border-color: rgba(255, 207, 92, 0.5); background: rgba(255, 207, 92, 0.06); }
+  .pl.life .plan { color: #FFCF5C; }
+  @media (max-width: 480px) { .plans { grid-template-columns: 1fr; } }
+  .inc { list-style: none; padding: 0; margin: 18px 0 0; display: grid; gap: 9px; }
+  .inc li { display: flex; gap: 10px; align-items: flex-start; color: #C6D8D7; }
+  .inc svg { width: 18px; height: 18px; color: var(--mint); flex: none; margin-top: 5px; }
+  .trial { border: 1px solid var(--line-2); border-radius: 14px; padding: 14px 16px; }
+  .trial b { font: 700 17px/1.4 var(--display); display: block; }
+  .trial span { color: var(--muted); font-size: 14px; }
+  .small-num { font-size: 13.5px; color: var(--muted); }
+  @media (max-width: 820px) { .price { grid-template-columns: 1fr; } .price .b { border-inline-start: 0; border-top: 1px solid var(--line); } }
+
+  /* FAQ */
+  .faq { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+  details { border: 1px solid var(--line); border-radius: 14px; background: var(--deep); padding: 4px 18px; }
+  summary { cursor: pointer; list-style: none; font: 700 16.5px/1.7 var(--display); padding: 14px 0; display: flex; justify-content: space-between; gap: 12px; }
+  summary::-webkit-details-marker { display: none; }
+  summary::after { content: "+"; color: var(--mint); font-size: 22px; line-height: 1; transition: transform .2s; }
+  details[open] summary::after { transform: rotate(45deg); }
+  details p { margin: 0 0 16px; color: var(--muted); font-size: 15px; line-height: 1.9; }
+  @media (max-width: 820px) { .faq { grid-template-columns: 1fr; } }
+
+  /* contact */
+  .contact { margin-block: 72px 30px; border-radius: 26px; padding: 36px 28px; background: radial-gradient(60% 120% at 80% 0%, rgba(37, 211, 102, 0.14), transparent 70%), var(--deep); border: 1px solid var(--line); display: grid; grid-template-columns: 1fr auto; gap: 20px; align-items: center; }
+  .contact h2 { font-size: clamp(26px, 3.6vw, 36px); }
+  .contact p { color: var(--muted); margin: 8px 0 0; }
+  .num { display: flex; align-items: center; gap: 10px; margin-top: 14px; flex-wrap: wrap; }
+  .num code { font: 600 20px/1 var(--mono); direction: ltr; letter-spacing: 1px; user-select: all; }
+  .copy { font: 600 13px var(--body); padding: 7px 12px; border-radius: 10px; border: 1px solid var(--line-2); background: transparent; color: var(--text); cursor: pointer; }
+  .copy:hover { border-color: var(--mint); color: var(--mint); }
+  .contact .ctas { justify-content: flex-end; }
+  @media (max-width: 820px) { .contact { grid-template-columns: 1fr; } .contact .ctas { justify-content: flex-start; } }
+
+  footer { border-top: 1px solid var(--line); padding-block: 22px 34px; color: #6E888C; font-size: 13px; }
+  footer .wrap { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 10px; }
+
+  /* ---------- install videos (YouTube facade) */
+  #ivBox { max-width: 900px; }
+  .ivtabs { display: inline-flex; gap: 6px; padding: 5px; border-radius: 14px; border: 1px solid var(--line-2); background: rgba(255,255,255,.02); margin-bottom: 18px; }
+  .ivtabs button { border: 0; background: transparent; color: var(--muted); font: 700 15px/1 var(--body); padding: 10px 18px; border-radius: 10px; cursor: pointer; }
+  .ivtabs button[aria-selected="true"] { background: var(--mint); color: var(--mint-ink); }
+  .ivf, .ivframe { position: relative; display: block; width: 100%; aspect-ratio: 16 / 9; border-radius: var(--r); overflow: hidden; border: 1px solid var(--line-2); background: #000; box-shadow: 0 24px 60px rgba(0,0,0,.45); }
+  .ivf { padding: 0; cursor: pointer; }
+  .ivf img { width: 100%; height: 100%; object-fit: cover; opacity: .9; transition: opacity .2s, transform .4s; }
+  .ivf:hover img { opacity: 1; transform: scale(1.02); }
+  .ivp { position: absolute; left: 50%; top: 50%; width: 76px; height: 76px; margin: -38px 0 0 -38px; border-radius: 50%; background: var(--mint); color: var(--mint-ink); display: grid; place-items: center; box-shadow: 0 12px 34px rgba(124,242,200,.35); }
+  .ivp svg { width: 34px; height: 34px; margin-left: 4px; }
+  .ivl { position: absolute; inset-inline-start: 14px; bottom: 12px; padding: 7px 12px; border-radius: 10px; background: rgba(10,19,23,.8); font: 700 14px/1.2 var(--body); color: var(--text); }
+</style>
+
+<!-- Meta Pixel (tools/pixel.json, written by tools/build_web.py) -->
+<script>
+!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,document,'script','https://connect.facebook.net/en_US/fbevents.js');
+fbq('init', '1531344805693860');
+fbq('track', 'PageView');
+(function () {
+  // remember which ad brought the visitor (utm_content = country: iq / sa / ae) so later events carry it
+  var K = 'rawi.src', s = null;
+  try { var q = new URLSearchParams(location.search); if (q.get('utm_source')) s = { src: q.get('utm_source'), campaign: q.get('utm_campaign') || '', country: q.get('utm_content') || '', at: Date.now() }; } catch (e) {}
+  try { if (s) localStorage.setItem(K, JSON.stringify(s)); else s = JSON.parse(localStorage.getItem(K) || 'null'); } catch (e) {}
+  window.rawiSrc = s || {};
+  // rawiTrack(event, params, custom?, oncePerSession?)
+  window.rawiTrack = function (ev, p, custom, once) {
+    try {
+      if (once) { var k = 'rawi.ev.' + ev; if (sessionStorage.getItem(k)) return; sessionStorage.setItem(k, '1'); }
+      var d = {}; for (var x in (p || {})) d[x] = p[x];
+      if (window.rawiSrc.country) d.ad_country = window.rawiSrc.country;
+      fbq(custom ? 'trackCustom' : 'track', ev, d);
+    } catch (e) {}
+  };
+})();
+</script>
+<noscript><img height="1" width="1" style="display:none" alt="" src="https://www.facebook.com/tr?id=1531344805693860&ev=PageView&noscript=1"></noscript>
+</head>
+<body>
+<!--I18N-->
+<script>
+(function () {
+  var D = /*D*/{"Rawi راوي — مونتاج عربي تلقائي لـ After Effects":"Rawi — automatic Arabic editing for After Effects","تحچي، وراوي يسوّي المونتاج: كابشن عربي، قوائم، أرقام، مشاهد فيسلس وانتقالات بضغطة وحدة.":"You talk, and Rawi does the edit: Arabic captions, lists, numbers, faceless scenes and transitions in one click.","Rawi راوي":"Rawi","راوي Rawi: إضافة After Effects عربية تسوي المونتاج من الكلام: كابشن عربي، مشاهد فيسلس، ومكتبة موشن تتعدل من التايم لاين.":"Rawi: an Arabic-first After Effects extension that edits from speech: Arabic captions, faceless scenes and a motion library you adjust right from the timeline.","راوي · After Effects":"Rawi · After Effects","الأقسام":"Sections","شنو يسوي":"What it does","التحميل":"Download","التثبيت":"Install","شلون تحصله":"How to get it","السعر":"Price","أسئلة":"FAQ","جرّب مجاناً":"Try it free","يومين":"for 2 days","تحچي، و":"You talk, and ","راوي":"Rawi","يسوّي المونتاج.":"does the edit.","إضافة After Effects عربية تسمع الفيديو وتركّب فوقه":"An Arabic-first After Effects extension that listens to your video and builds on top of it","العناوين والقوائم والكابشن والانتقالات والأصوات":"titles, lists, captions, transitions and sounds","بضغطة وحدة. وكل عنصر يبقى طبقة وحدة تتعدل من التايم لاين.":"in one click. Every element stays a single layer you can edit from the timeline.","حمّل راوي مجاناً":"Download Rawi free","السعر والتجربة المجانية":"Price and free trial","التجربة يومين مجاناً وبيها كل الأدوات. تطلبها من داخل الإضافة بضغطة، والكود يتفعّل تلقائياً.":"The 2-day trial is free and includes every tool. Request it from inside the extension in one click, and the code activates automatically.","أمثلة معمولة براوي":"Made with Rawi","مثال: إشارات مدارية، قائمة، رقم، ومشهد فيسلس":"Example: orbit callouts, a list, a number and a faceless scene","مثال: مشهد نيون وقائمة ذكية":"Example: a neon scene and a smart list","مثال: ملاحظة مثبتة، كلمات، وإشارات حول الشخص":"Example: a pinned note, words and callouts around the speaker","كل أداة طبقة بالتايم لاين":"Every tool is a layer on your timeline","أربع أدوات بمكان واحد. كلها تشتغل على الفيديو الحقيقي، وما تقص منه ولا ثانية.":"Four tools in one place. They all work on your real footage and never cut a single second of it.","المونتاج التلقائي":"Auto Edit","يفرّغ الكلام ويفهمه: إذا الشخص عدّد أشياء تطلع قائمة وكل عنصر يظهر بلحظة ما ينذكر، وإذا ذكر رقم يطلع رقم كبير، والكلمات المهمة تصير زجاج أو تمييز. ويضيف عنوان بالبداية، وزووم، وانتقالات بالوقفات، ودعوة للتواصل بالنهاية، ويا أصوات لكل عنصر.":"Transcribes and understands the speech: when the speaker lists things, a list appears with each item at the moment it's mentioned; a number becomes a big number; key words turn into glass or highlights. It adds an opening title, zooms, transitions on pauses and a call to action at the end, with sounds for every element.","كل المونتاج خطوة وحدة Ctrl+Z":"The whole edit is one Ctrl+Z step","تراجع وعدّل أي عنصر قبل التطبيق":"Review and change any element before applying","إيقاع هادئ / متوسط / قوي":"Calm / medium / strong pacing","كابشن عربي":"Arabic captions","تفريغ الكلام يصير على جهازك، ويفهم اللهجة العراقية. تصحح أي كلمة وتبقى التوقيتات مضبوطة، وتحط الكلمة المهمة بين [ ] حتى تطلع بلون وحركة.":"Transcription runs on your computer and understands the Iraqi dialect. Fix any word and the timing stays exact; put a key word in [ ] to give it its own colour and motion.","٧ ستايلات":"7 styles","كلمة بكلمة":"Word by word","طبقة وحدة للكابشن كله":"One layer for all the captions","فيسلس":"Faceless","مشاهد كاملة تغطي الفيديو لما ما تريد الشخص يبين: نيون، منتج واقعي، مجسّم، كولاج ورقي، ملاحظة مثبّتة، وكلمات تنط. تبدّل الصورة بصورة منتجك وتحرّكها وتكبّرها براحتك.":"Full scenes that cover the video when you don't want the speaker on screen: neon, real product, 3D object, paper collage, pinned note and bouncing words. Swap in a photo of your product, then move and scale it freely.","٦ مشاهد":"6 scenes","حركة ارتداد ناعمة":"Soft bounce motion","٤ ألوان لكل مشهد":"4 colour sets per scene","مشاهد فيسلس":"Faceless scenes","مكتبة موشن":"Motion library","عناوين، تمييز كلمات، كبسولات، أزرار دعوة، قوائم ومؤشر، زجاج حقيقي يغبّش الفيديو اللي وراه، بطاقات وأرقام، إشارات مدارية، انتقالات وحركة كاميرا، ومكتبة أصوات.":"Titles, highlighted words, pills, call-to-action buttons, lists and cursor, real glass that frosts the video behind it, cards and numbers, orbit callouts, transitions and camera moves, and a sound library.","٢٢ مكوّن":"22 components","١٩ صوت":"19 sounds","عربي وإنجليزي":"Arabic and English","تعاين قبل ما تدرج، وتعدّل بعده":"Preview before you insert, edit after","لوحة راوي داخل After Effects: مكتبة المكونات على اليمين، والمعاينة والتعديل على اليسار":"The Rawi panel inside After Effects: the component library on the right, preview and settings on the left","طبقة وحدة لكل عنصر":"One layer per element","كل مكوّن يدخل precomp واحد يتكيف ويا النص والمقاس.":"Each component goes into a single precomp that adapts to the text and the frame size.","اضغط على الطبقة، تنفتح إعداداتها":"Click the layer and its settings open","تحدد الطبقة بالتايم لاين وتعدّل الألوان والنص والحركة، والتغيير ينطبق فوراً.":"Select the layer on the timeline and change colours, text and motion; changes apply instantly.","عربي أولاً":"Arabic first","النص من اليمين لليسار مضبوط، والخطوط العربية مرتبة، والواجهة كلها بالعربي.":"Right-to-left text set correctly, Arabic fonts handled properly, and a fully Arabic interface.","تلگاها من القائمة":"Find it in the menu","حمّل راوي وثبّته بنفسك":"Download Rawi and install it yourself","التحميل مجاني. الإضافة تشتغل بعد ما تفعّلها بكود تجربة أو كود النسخة الكاملة.":"The download is free. The extension works once you activate it with a trial code or a full-version code.","راوي لـ After Effects":"Rawi for After Effects","ملف تثبيت واحد، يتثبّت بدقيقة وبدون صلاحيات مدير.":"One installer, installs in a minute, no admin rights needed.","ويندوز 10 و 11 ·":"Windows 10 and 11 ·","أو أحدث":"or newer","تحميل لويندوز":"Download for Windows","إذا طلعت رسالة":"If you see","اضغط":"click","وبعدها":"then",". تطلع لأن الملف جديد ومو موقّع بعد، وهو آمن.":". It appears because the file is new and not signed yet; it is safe.","عندك ماك؟":"On a Mac?","حمّل نسخة الماك":"Download the Mac version","— تتثبت بسطر واحد بالـ":"— installs with one line in","سكّر After Effects":"Quit After Effects","وافتح الملف اللي حمّلته، وبداخله دبل كلك على":"then open the file you downloaded and double-click","افتح After Effects":"Open After Effects","ومن القائمة":"and from the menu","اضغط «اطلب تجربة يومين»":"Click “Request a 2-day trial”","بشاشة التفعيل، والكود يتفعّل تلقائياً بعد الموافقة.":"on the activation screen; the code activates automatically once approved.","للنسخة الكاملة:":"For the full version:","اشترِ من":"buy from the","المتجر":"store","، وبعدها اضغط «دفعت؟ فعّل النسخة الكاملة» واكتب رقم الطلب.":", then click “Paid? Activate the full version” and enter your order number.","شوف طريقة التثبيت":"Watch how to install","فيديو قصير خطوة بخطوة: من التحميل لحد ما تتفعّل التجربة.":"A short step-by-step video: from download until the trial is active.","نظام التشغيل":"Operating system","ويندوز":"Windows","ماك":"Mac","شلون تحصل راوي":"How to get Rawi","كل نسخة ترتبط بجهاز واحد. كلشي يصير من داخل الإضافة، وما تحتاج تراسل أحد.":"Each licence is tied to one computer. Everything happens inside the extension; you don't need to message anyone.","حمّل وثبّت":"Download and install","حمّل ملف التثبيت من هذي الصفحة وثبّته، وافتح راوي من After Effects.":"Download the installer from this page, install it, and open Rawi from After Effects.","جرّب يومين مجاناً":"Try it free for 2 days","من شاشة التفعيل اضغط «اطلب تجربة يومين». رقم جهازك ينرسل ويا الطلب، والكود يتفعّل تلقائياً.":"On the activation screen click “Request a 2-day trial”. Your device ID is sent with the request and the code activates automatically.","اشترِ وفعّل":"Buy and activate","ادفع من متجر راوي، وبعدها بنفس الشاشة اضغط «دفعت؟ فعّل النسخة الكاملة» واكتب رقم الطلب. تتفعّل خلال دقايق بدون ما تراسل أحد.":"Pay in the Rawi store, then on the same screen click “Paid? Activate the full version” and enter your order number. It activates within minutes, no messages needed.","وفّر":"Save","زجاج أبل السائل (Liquid Glass)":"Apple-style Liquid Glass","خطوط وزوايا متوهجة للنصوص والصور":"Glowing lines and corners for text and images","Rawi Glow: توهج ضوئي خفيف على أي طبقة بضغطة":"Rawi Glow: a soft light glow on any layer in one click","زجاج سائل ويا صورة: دائرة أو مربع، فوق أو تحت أو على الجوانب":"Liquid glass with a picture: circle or square, above, below or on the sides","كابشن بكتلة مربعة وستايلات ناعمة بدون قفزات":"Block captions and smooth styles without jumps","الكابشن العربي بـ ٧ ستايلات":"Arabic captions in 7 styles","٦ مشاهد فيسلس":"6 faceless scenes","٢٢ مكوّن موشن و١٩ صوت":"22 motion components and 19 sounds","جرّب قبل ما تشتري":"Try before you buy","يومين مجاناً بكل الأدوات. بعدها تقرر.":"2 days free with every tool. Then decide.","دفع إلكتروني آمن عبر المتجر، والتفعيل من داخل راوي.":"Secure online payment through the store; activation happens inside Rawi.","اطلب تجربة يومين":"Request a 2-day trial","أسئلة تتكرر":"Frequently asked questions","من وين أحمّل الإضافة؟":"Where do I download the extension?","من زر «تحميل لويندوز» بهذي الصفحة. التحميل مجاني، وبعد التثبيت تطلب التجربة أو تفعّل النسخة الكاملة من داخل الإضافة.":"From the “Download for Windows” button on this page. The download is free; after installing, request the trial or activate the full version from inside the extension.","على شنو يشتغل؟":"What does it run on?","الكابشن يحتاج نت؟":"Do captions need internet?","التفريغ يصير على جهازك. محرك التفريغ يتحمّل مرة وحدة أول ما تستخدم الكابشن، وبعدها يشتغل بدون نت.":"Transcription runs on your computer. The transcription engine downloads once the first time you use captions, then works offline.","الكود يشتغل على كم جهاز؟":"How many computers does a code work on?","كل كود لجهاز واحد، ويرتبط برقم الجهاز اللي يطلع بشاشة التفعيل. إذا تحتاج جهاز ثاني راسلنا بالتليغرام.":"Each code is for one computer and is tied to the device ID shown on the activation screen. Need a second computer? Message us on Telegram.","شنو بيها التجربة؟":"What's in the trial?","كل الأدوات بدون استثناء لمدة يومين. بعد ما تخلص تگدر تشتري النسخة الكاملة وتفعّلها بنفس الشاشة.":"Every tool, no exceptions, for 2 days. When it ends you can buy the full version and activate it on the same screen.","المونتاج التلقائي يقص الفيديو؟":"Does Auto Edit cut my video?","لا. يضيف العناصر فوق الفيديو بس، والمقطع الأصلي يبقى مثل ما هو. وكل المونتاج ينشال بـ Ctrl+Z وحدة.":"No. It only adds elements on top of the video; your original clip stays as it is. And the whole edit is removed with a single Ctrl+Z.","شلون أدفع؟":"How do I pay?","من":"from","متجر راوي":"Rawi store","بالدفع الإلكتروني. بعد الدفع افتح راوي واضغط «دفعت؟ فعّل النسخة الكاملة» واكتب رقم الطلب أو رقم الهاتف اللي دفعت بيه، وتتفعّل النسخة الكاملة خلال دقايق.":"by online payment. After paying, open Rawi, click “Paid? Activate the full version” and enter your order number or the phone number you paid with; the full version activates within minutes.","تحتاج مساعدة؟":"Need help?","التجربة والشراء والتفعيل كلها تصير من داخل راوي: اطلب تجربة يومين من شاشة التفعيل، أو اشترِ من المتجر واضغط «دفعت؟ فعّل النسخة الكاملة»، والكود يتفعّل لحاله. إذا واجهتك مشكلة أو عندك سؤال، راسلنا بالتليغرام.":"Trial, purchase and activation all happen inside Rawi: request a 2-day trial from the activation screen, or buy from the store and click “Paid? Activate the full version”, and the code activates by itself. If you run into a problem or have a question, message us on Telegram.","راسلنا بالتليغرام":"Message us on Telegram","اشترِ النسخة الكاملة":"Buy the full version","Rawi راوي · إضافة After Effects عربية":"Rawi · an Arabic-first After Effects extension","After Effects علامة تجارية لشركة Adobe.":"After Effects is a trademark of Adobe.","تشغيل المثال":"Play the example","فيديو التثبيت على الماك":"Mac install video","فيديو التثبيت على ويندوز":"Windows install video","تحميل راوي":"Download Rawi","تحميل إضافة راوي لبرنامج After Effects":"Download the Rawi extension for After Effects","إضافة عربية لـ":"An Arabic-first extension for","— التحميل يبدأ تلقائياً، وإذا ما بدأ اضغط الزر.":"— the download starts automatically; if it doesn't, click the button.","ويندوز 10 و 11 · ماك":"Windows 10 and 11 · Mac","راوي يشتغل على الكمبيوتر":"Rawi runs on a computer","إضافة لـ":"An extension for","على ويندوز أو ماك. افتح هذا الرابط من كمبيوترك وحمّلها من هناك، والتجربة يومين مجاناً.":"on Windows or Mac. Open this link on your computer and download it there; the trial is 2 days free.","ابعث الرابط لنفسك":"Send the link to yourself","انسخ الرابط":"Copy the link","تحميل نسخة الماك":"Download the Mac version","· تفضّل التثبيت اليدوي؟":"· Prefer a manual install?","ملفات الإضافة":"Extension files","طريقة التثبيت على ويندوز":"How to install on Windows","افتح الملف":"Open","، وبداخله دبل كلك على":", and inside it double-click","واضغط تثبيت.":"and click Install.","افتح":"Open","اضغط «اطلب تجربة يومين» — بعد الموافقة الكود يتفعّل تلقائياً داخل الإضافة.":"Click “Request a 2-day trial” — once approved, the code activates automatically inside the extension.","إذا طلع تحذير ويندوز الأزرق: اضغط":"If the blue Windows warning appears: click","ثم":"then","— لأن الملف جديد وغير موقّع رقمياً بعد.":"— because the file is new and not digitally signed yet.","تحميل للماك":"Download for Mac","عندك ويندوز؟":"On Windows?","تحميل نسخة ويندوز":"Download the Windows version","طريقة التثبيت على الماك":"How to install on Mac","فك ضغط":"Unzip","(دبل كلك) — يطلع مجلد":"(double-click) — a folder","داخل التنزيلات.":"appears in Downloads.","يفكه وحده.":"unzips it by itself.","سكّر":"Close","، وافتح":", open","واكتب":"and type",")، والصق هذا السطر واضغط":"), paste this line and press","ما يطلب كلمة سر. إذا المجلد مو داخل التنزيلات: اكتب":"It doesn't ask for a password. If the folder isn't in Downloads: type","ومسافة، واسحب ملف":"and a space, drag the file","للـ":"into","واضغط":"and press","الكابشن التلقائي":"automatic captions","و":"and","اطلب كود التجربة":"Request a trial code","الأسهل: من داخل الإضافة اضغط «اطلب تجربة يومين» والكود يتفعّل وحده. أو اكتب رقم جهازك هنا (يطلع بشاشة التفعيل داخل راوي) ويطلعلك الكود بنفس الصفحة بعد الموافقة.":"Easiest: inside the extension click “Request a 2-day trial” and the code activates by itself. Or enter your device ID here (shown on Rawi's activation screen) and the code appears on this page once approved.","رقم الجهاز":"Device ID","اسمك":"Your name","مثلاً: أحمد":"e.g. Ahmed","تليغرام أو انستغرام (اختياري)":"Telegram or Instagram (optional)","حتى نتواصل وياك إذا احتجت مساعدة":"so we can reach you if you need help","تابع طلبك على تيليغرام — يوصلك الكود والدعم هناك":"Follow your request on Telegram — you'll get the code and support there","نسخ الكود":"Copy the code","النسخة الكاملة ·":"Full version ·","تحتاج مساعدة؟ راسلنا بالتليغرام":"Need help? Message us on Telegram","راوي — إضافة After Effects":"Rawi — After Effects extension","حمّل راوي من الكمبيوتر:":"Download Rawi on your computer:","تم النسخ ✓":"Copied ✓","افتح الملف <bdi>Rawi-Setup.exe</bdi> واضغط تثبيت.":"Open <bdi>Rawi-Setup.exe</bdi> and click Install.","✓ تمت الموافقة! انسخ الكود، والصقه بشاشة التفعيل داخل راوي واضغط «تفعيل».":"✓ Approved! Copy the code, paste it on the activation screen inside Rawi and click “Activate”.","ما انقبل الطلب":"Request not accepted","✓ وصل طلبك. الكود يطلع هنا تلقائياً خلال دقايق بعد الموافقة — خلي الصفحة مفتوحة.":"✓ Request received. The code appears here automatically within minutes of approval — keep this page open.","اكتب رقم الجهاز كامل (١٠ حروف وأرقام) مثل ما يطلع بشاشة التفعيل.":"Enter the full device ID (10 letters and numbers) exactly as it appears on the activation screen.","جاري الإرسال…":"Sending…","الطلبات كثيرة هسه. جرّب بعد ساعة.":"Too many requests right now. Try again in an hour.","تأكد من رقم الجهاز وحاول مرة ثانية.":"Check the device ID and try again.","ما گدرنا نوصل للسيرفر. تأكد من النت وحاول مرة ثانية.":"We couldn't reach the server. Check your internet and try again.",". كل الأدوات تشتغل على الماك، ومنها الكابشن التلقائي.":". Every tool works on Mac, including auto captions.","على After Effects بالويندوز والماك (2022 أو أحدث). كل الأدوات تشتغل على الاثنين، ومنها الكابشن التلقائي.":"After Effects on Windows and Mac (2022 or newer). Every tool works on both, including auto captions.","على الماك كل القوالب والأدوات تشتغل، ومنها":"On Mac every template and tool works, including","Rawi راوي — مونتاج عربي تلقائي لـ After Effects و Premiere Pro":"Rawi — automatic Arabic editing for After Effects and Premiere Pro","راوي Rawi: إضافة عربية لـ After Effects و Premiere Pro تسوي المونتاج من الكلام: كابشن عربي، مشاهد فيسلس، ومكتبة موشن تتعدل من التايم لاين.":"Rawi: an Arabic-first extension for After Effects and Premiere Pro that edits from speech: Arabic captions, faceless scenes and a motion library you adjust right from the timeline.","راوي · After Effects · Premiere Pro":"Rawi · After Effects · Premiere Pro","يشتغل على":"Works in","إضافة عربية لـ After Effects و Premiere Pro تسمع الفيديو وتركّب فوقه":"An Arabic-first extension for After Effects and Premiere Pro that listens to your video and builds on top of it","+١٢٠ عنصر":"120+ elements","+١٣٠ مؤثر صوتي":"130+ sound effects","راوي صار على البريمير":"Rawi is now in Premiere","نفس راوي ونفس كود التفعيل. إذا مفعّل بالأفترافكت، يشتغل بالبريمير على نفس الجهاز بدون تفعيل ثاني.":"Same Rawi, same activation code. If it is activated in After Effects, it works in Premiere on the same computer with no second activation.","١٢٦ عنصر جاهز":"126 ready elements","نصوص متحركة، زجاج سائل ومصنفر، أيقونات، ستايل ترند، نيون وفيسلس. تضغط على العنصر وينزل بمكان المؤشر بالتايم لاين.":"Animated texts, liquid and frosted glass, icons, Trend Style, neon and faceless scenes. Click an element and it lands at the playhead.","كل التحكم من Properties":"Every control in Properties","النص والخط والألوان والحجم والحركة بمجلدات مرتبة، وتسحب الفيديو على خلفية الزجاج حتى يتغبّش وراه.":"Text, font, colours, size and motion in tidy folders; drop your video on the glass background and it frosts behind it.","كل انتقالات البريمير بالعربي":"Every Premiere transition in Arabic","١٢٨ انتقال بأسماء عربية وانتقالات راوي، ومنحنيات الحركة على الفريمات، وأصوات لكل عنصر.":"128 transitions with Arabic names plus Rawi transitions, motion curves on keyframes, and sounds for every element.","راوي لـ After Effects و Premiere Pro":"Rawi for After Effects and Premiere Pro","ملف تثبيت واحد ينصّب الاثنين، بدقيقة وبدون صلاحيات مدير.":"One installer sets up both, in a minute and without admin rights.","سكّر After Effects و Premiere Pro":"Close After Effects and Premiere Pro","افتح After Effects أو Premiere Pro":"Open After Effects or Premiere Pro","حمّل ملف التثبيت من هذي الصفحة وثبّته، وافتح راوي من After Effects أو Premiere Pro.":"Download the installer from this page, install it, and open Rawi in After Effects or Premiere Pro.","على After Effects (2022 أو أحدث) و Premiere Pro (2025 أو أحدث)، بالويندوز والماك. كل الأدوات تشتغل على الاثنين، ومنها الكابشن التلقائي.":"After Effects (2022 or newer) and Premiere Pro (2025 or newer), on Windows and Mac. Every tool works on both, including auto captions.","أحتاج كود ثاني للبريمير؟":"Do I need another code for Premiere?","لا. نفس كود راوي يشغّل الأفترافكت والبريمير على نفس الجهاز. وإذا عندك راوي من قبل، البريمير يجيك ويا التحديث بدون ما تدفع شي.":"No. The same Rawi code runs After Effects and Premiere on the same computer. If you already have Rawi, Premiere comes with the update at no extra cost.","Rawi راوي · إضافة عربية لـ After Effects و Premiere Pro":"Rawi · Arabic-first extension for After Effects and Premiere Pro","After Effects و Premiere Pro علامتان تجاريتان لشركة Adobe.":"After Effects and Premiere Pro are trademarks of Adobe.","تحميل راوي لـ After Effects و Premiere Pro":"Download Rawi for After Effects and Premiere Pro","أو":"or","راوي — إضافة After Effects و Premiere Pro":"Rawi — an extension for After Effects and Premiere Pro","عندك راوي على الماك؟ حدّثه بسطر واحد":"Rawi already on your Mac? Update it with one line","، والصق هذا السطر واضغط":", paste this line and press",". يحمّل آخر نسخة، ويثبّتها مكان القديمة ويحذف القديمة. التفعيل يبقى.":". It downloads the latest version, installs it in place of the old one and deletes the old one. Your activation stays.","انسخ السطر":"Copy the line","شلون أحدّث راوي على الماك؟":"How do I update Rawi on a Mac?","سكّر After Effects و Premiere Pro، وانسخ سطر التحديث من":"Close After Effects and Premiere Pro, copy the update line from the","صفحة التحميل":"download page","والصقه بالـ Terminal. يحمّل آخر نسخة ويثبّتها مكان القديمة، والتفعيل يبقى. على الويندوز: حمّل ملف التثبيت الجديد وثبّته فوق القديم.":"and paste it into Terminal. It downloads the latest version and installs it in place of the old one; your activation stays. On Windows: download the new installer and install it over the old one.","بشاشة التفعيل، والتجربة تتفعّل خلال ثواني.":"on the activation screen; the trial activates within seconds.","من شاشة التفعيل اضغط «اطلب تجربة يومين»، والتجربة تتفعّل خلال ثواني. التجربة مرة وحدة لكل جهاز.":"On the activation screen click “Request a 2-day trial” and the trial activates within seconds. One trial per computer.","كل الأدوات بدون استثناء لمدة يومين، ومرة وحدة لكل جهاز. بعد ما تخلص تگدر تشتري النسخة الكاملة وتفعّلها بنفس الشاشة.":"Every tool, no exceptions, for 2 days, once per computer. When it ends you can buy the full version and activate it on the same screen.","اضغط «اطلب تجربة يومين» — التجربة تتفعّل داخل الإضافة خلال ثواني.":"Click “Request a 2-day trial” — the trial activates inside the extension within seconds.","الأسهل: من داخل الإضافة اضغط «اطلب تجربة يومين» وتتفعّل خلال ثواني. أو اكتب رقم جهازك هنا (يطلع بشاشة التفعيل داخل راوي) ويطلعلك الكود بنفس الصفحة بعد الموافقة.":"Easiest: inside the extension click “Request a 2-day trial” and it activates within seconds. Or enter your device ID here (shown on Rawi's activation screen) and the code appears on this page once approved.","اشترك · من":"Subscribe · from","د.ع":"IQD","اشتراك سنوي أو شهري":"Yearly or monthly","الأوفر":"Best value","د.ع / سنة":"IQD / year","د.ع / شهر":"IQD / month","ادفع شهر بشهر":"Pay month by month","النسخة الكاملة بكل الأدوات والتحديثات طول مدة اشتراكك.":"The full version with every tool and update for as long as you are subscribed.","اشترك من المتجر":"Subscribe in the store","بالدفع الإلكتروني: اختار سنوي (":"with online payment: choose yearly (","د.ع) أو شهري (":"IQD) or monthly (","د.ع). بعد الدفع افتح راوي واضغط «دفعت؟ فعّل النسخة الكاملة» واكتب رقم الطلب أو رقم الهاتف اللي دفعت بيه، وتتفعّل النسخة الكاملة خلال دقايق.":"IQD). After paying, open Rawi, click “Paid? Activate the full version” and enter your order number or the phone number you paid with; the full version is active within minutes.","شنو يصير من يخلص الاشتراك؟":"What happens when my subscription ends?","راوي يرجع لشاشة التفعيل. تجدد من المتجر وتفعّل بنفس الطريقة: «دفعت؟ فعّل النسخة الكاملة» ورقم الطلب الجديد.":"Rawi goes back to the activation screen. Renew in the store and activate the same way: “Paid? Activate the full version” with the new order number.","النسخة الكاملة · سنوي":"Full version · yearly","د.ع · شهري":"IQD · monthly","اشتراك سنوي أو شهري. اشترك من المتجر، وبعدها من داخل راوي اضغط «دفعت؟ فعّل النسخة الكاملة» واكتب رقم الطلب — تتفعّل خلال دقايق.":"Yearly or monthly subscription. Subscribe in the store, then inside Rawi click “Paid? Activate the full version” and enter your order number — active within minutes.","أوفر من الشهري بـ":"Saves","تجربة يومين مجاناً، تتفعّل تلقائياً. من داخل الإضافة اضغط «اطلب تجربة يومين»، أو اكتب رقم جهازك هنا ويطلعلك كود التجربة بنفس اللحظة.":"A free 2-day trial that activates automatically. Inside the extension press «Request a 2-day trial», or enter your device number here and your trial code shows up right away.","⚠️ لا تكتب رقم هاتفك.":"⚠️ Don't enter your phone number.","رقم الجهاز يظهر بعد ما تثبّت الإضافة وتفتحها داخل":"The device number appears after you install the extension and open it inside","(من":"(from",")، بشاشة التفعيل. شكله مثل:":"), on the activation screen. It looks like:","فعّل التجربة الآن":"Activate the trial now","هذا رقم هاتف، مو رقم الجهاز. ثبّت الإضافة وافتحها داخل Premiere Pro أو After Effects، ورقم الجهاز يظهر بشاشة التفعيل.":"That's a phone number, not the device number. Install the extension and open it inside Premiere Pro or After Effects; the device number is on the activation screen.","✓ هذا كود التجربة مالتك (يومين). انسخه، والصقه بشاشة التفعيل داخل راوي واضغط «تفعيل».":"✓ Here is your 2-day trial code. Copy it, paste it on Rawi's activation screen and press «Activate».","راسلنا على تيليغرام":"Message us on Telegram","رقم الجهاز ما بيه الحروف I و L و O و U. انسخه من شاشة التفعيل داخل راوي.":"Device numbers never contain I, L, O or U. Copy it from the activation screen inside Rawi.","جاري التفعيل…":"Activating…","هذا الجهاز أخذ تجربته قبل. إذا تحتاج تجربة ثانية راسلنا على تيليغرام.":"This computer has already had its trial. If you need another one, message us on Telegram.","اكو طلب سابق لهذا الجهاز. راسلنا على تيليغرام ونرتبها.":"There is already a request for this computer. Message us on Telegram and we will sort it out.",". ينزّل بس الملفات اللي تغيّرت، ويتأكد من كل ملف قبل ما يبدّلها، والتفعيل يبقى. إذا راوي محدّث يكلك وما ينزّل شي، وإذا":". It downloads only the files that changed and checks every file before switching; your activation stays. If Rawi is already up to date it tells you and downloads nothing, and if","مفتوح ينتظرك تسكّره.":"is open it waits for you to close it.","والصقه بالـ Terminal. ينزّل بس الملفات اللي تغيّرت ويثبّتها مكان القديمة، والتفعيل يبقى. على الويندوز: حمّل ملف التثبيت الجديد وثبّته فوق القديم.":"and paste it in Terminal. It downloads only the files that changed and installs them in place of the old ones; your activation stays. On Windows: download the new installer and install it over the old one.","شهري، سنوي، أو مدى الحياة":"Monthly, yearly or lifetime","ج.م":"EGP","د.ع · مدى الحياة":"IQD · lifetime","دفعة وحدة بدون تجديد، وبيها كل التحديثات":"One payment, no renewal, all updates included","الدولار والجنيه المصري تقريبي حسب سعر الصرف اليوم، والدفع بالدينار العراقي.":"US dollar and Egyptian pound amounts are approximate at today's exchange rate; payment is in Iraqi dinars.","بالدفع الإلكتروني: اختار شهري (":"with online payment: choose monthly (","د.ع)، سنوي (":"IQD), yearly (","د.ع) أو مدى الحياة (":"IQD) or lifetime (","النسخة الكاملة · شهري":"Full version · monthly","· سنوي":"· yearly","· مدى الحياة":"· lifetime","بالدولار تقريباً:":"About, in US dollars:","— وبالجنيه المصري:":"— in Egyptian pounds:","ج.م (الدفع بالدينار العراقي).":"EGP (payment is in Iraqi dinars).","اشتراك شهري أو سنوي أو مدى الحياة. اشترك من المتجر، وبعدها من داخل راوي اضغط «دفعت؟ فعّل النسخة الكاملة» واكتب رقم الطلب — تتفعّل خلال دقايق.":"Monthly, yearly or lifetime. Subscribe in the store, then in Rawi click “Paid? Activate the full version” and enter your order number — it activates within minutes."}/*D*/;
+  var q = null, s = null; try { q = new URLSearchParams(location.search).get('lang'); } catch (e) {}
+  try { s = localStorage.getItem('rawi.lang'); } catch (e) {}
+  var ls = (navigator.languages && navigator.languages.length ? navigator.languages : [navigator.language || '']).join(',').toLowerCase();
+  var L = (q === 'en' || q === 'ar') ? q : (s === 'en' || s === 'ar') ? s : (/(^|,)ar/.test(ls) ? 'ar' : 'en');
+  if (q === 'en' || q === 'ar') { try { localStorage.setItem('rawi.lang', q); } catch (e) {} }
+  var N = function (x) { return String(x).replace(/\s+/g, ' ').trim(); };
+  window.RAWI_LANG = L;
+  window.T = function (a) { return L === 'en' && D[N(a)] ? D[N(a)] : a; };
+  var de = document.documentElement; de.lang = L; de.dir = L === 'en' ? 'ltr' : 'rtl';
+  function tr(root) {
+    if (L !== 'en') return;
+    var w = document.createTreeWalker(root, NodeFilter.SHOW_TEXT, null), n;
+    while ((n = w.nextNode())) {
+      var p = n.parentNode; if (!p || /^(SCRIPT|STYLE)$/.test(p.nodeName)) continue;
+      var v = n.nodeValue, k = N(v); if (!k) continue;
+      if (D[k]) n.nodeValue = v.match(/^\s*/)[0] + D[k] + v.match(/\s*$/)[0];
+      else if (/^[←\s]+$/.test(v)) n.nodeValue = v.replace(/←/g, '→');
+    }
+    var A = ['placeholder', 'aria-label', 'title', 'alt'];
+    Array.prototype.forEach.call(root.querySelectorAll('[placeholder],[aria-label],[title],[alt]'), function (el) {
+      A.forEach(function (a) { var v = el.getAttribute(a); if (v && D[N(v)]) el.setAttribute(a, D[N(v)]); });
+    });
+  }
+  function button() {
+    var b = document.createElement('button'); b.type = 'button'; b.className = 'langsw';
+    b.textContent = L === 'en' ? 'عربي' : 'EN'; b.setAttribute('aria-label', L === 'en' ? 'العربية' : 'English');
+    b.lang = L === 'en' ? 'ar' : 'en';
+    b.addEventListener('click', function () {
+      var to = L === 'en' ? 'ar' : 'en'; try { localStorage.setItem('rawi.lang', to); } catch (e) {}
+      var u = new URL(location.href); u.searchParams.set('lang', to); location.replace(u.toString());
+    });
+    var slot = document.querySelector('.top .wrap .btn.sm');
+    if (slot) slot.parentNode.insertBefore(b, slot); else { b.classList.add('float'); document.body.appendChild(b); }
+  }
+  document.addEventListener('DOMContentLoaded', function () {
+    tr(document.body);
+    if (L === 'en') { document.title = D[N(document.title)] || document.title; var m = document.querySelector('meta[name=description]'); if (m && D[N(m.content)]) m.content = D[N(m.content)]; }
+    button();
+  });
+})();
+</script>
+<style>
+  .langsw { font: 700 13px/1 system-ui, sans-serif; color: var(--text, #EAF3F2); background: transparent; border: 1px solid var(--line, rgba(137,170,176,.25)); border-radius: 999px; padding: 8px 12px; cursor: pointer; }
+  .langsw:hover { border-color: var(--mint, #7CF2C8); }
+  .top nav + .langsw, .top .langsw { margin-inline-start: 4px; }
+  .langsw.float { position: fixed; top: 14px; inset-inline-end: 14px; z-index: 30; background: rgba(10,19,23,.75); backdrop-filter: blur(8px); }
+  html[dir=ltr], html[dir=ltr] body { direction: ltr; }
+  html[dir=ltr] .card { text-align: left; }
+</style>
+<!--/I18N-->
+<header class="top">
+  <div class="wrap">
+    <a class="brand" href="#top" aria-label="Rawi">
+      <span class="mark"><svg viewBox="0 0 64 64" aria-hidden="true"><path d="M33 16c1.6 6.8 1.9 14.9-1.4 21.4-3.3 6.4-9.6 10.3-17.6 11.6" fill="none" stroke="currentColor" stroke-width="7.2" stroke-linecap="round"/><path d="M42 22.5a7 7 0 0 1 0 10" fill="none" stroke="currentColor" stroke-width="3.6" stroke-linecap="round"/><path d="M48.5 18a14 14 0 0 1 0 19" fill="none" stroke="currentColor" stroke-width="3.6" stroke-linecap="round" opacity=".55"/></svg></span>
+      <span><b>Rawi</b><small>راوي · After Effects · Premiere Pro</small></span>
+    </a>
+    <nav aria-label="الأقسام"><a href="#what">شنو يسوي</a><a href="#download">التحميل</a><a href="#install" id="navInstall" hidden>التثبيت</a><a href="#how">شلون تحصله</a><a href="#price">السعر</a><a href="#faq">أسئلة</a></nav>
+    <a class="btn dl sm" data-trial href="/download#trial"><span>جرّب مجاناً <span class="long">يومين</span></span></a>
+  </div>
+</header>
+
+<main id="top">
+  <div class="hero">
+    <div class="wrap">
+      <span class="eyebrow"><i></i>Arabic first</span>
+      <div class="apps" aria-label="يشتغل على"><span class="lbl">يشتغل على</span><span class="app ae"><i></i>After Effects</span><span class="app pr"><i></i>Premiere Pro</span></div>
+      <h1>تحچي، و<span class="kw">راوي</span> يسوّي المونتاج.</h1>
+      <p class="lead">إضافة عربية لـ After Effects و Premiere Pro تسمع الفيديو وتركّب فوقه <b>العناوين والقوائم والكابشن والانتقالات والأصوات</b> بضغطة وحدة. وكل عنصر يبقى طبقة وحدة تتعدل من التايم لاين.</p>
+      <div class="ctas">
+        <a class="btn dl" data-dl href="#download"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 4v11M7 10.5l5 5 5-5M5 19.5h14"/></svg>حمّل راوي مجاناً</a>
+        <a class="btn buy" href="#price"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 5h2l2 10h9.5l2-7H7.2"/><circle cx="9.5" cy="19" r="1.3"/><circle cx="17" cy="19" r="1.3"/></svg>اشترك · من <bdi dir="ltr">15,000</bdi> د.ع</a>
+        <a class="btn line" href="#price">السعر والتجربة المجانية</a>
+      </div>
+      <p class="note">التجربة يومين مجاناً وبيها كل الأدوات. تطلبها من داخل الإضافة بضغطة، والكود يتفعّل تلقائياً.</p>
+
+      <div class="timeline" aria-label="أمثلة معمولة براوي">
+        <div class="ruler" aria-hidden="true"><span>00:00:00:00</span><span>00:00:03:00</span><span>00:00:06:00</span><span>00:00:09:00</span><span>00:00:12:00</span></div>
+        <div class="track">
+          <div class="clip"><video data-src="assets/demo1.mp4" poster="assets/demo1.jpg" muted loop playsinline preload="none" aria-label="مثال: إشارات مدارية، قائمة، رقم، ومشهد فيسلس"></video><span class="tag">demo_01 · Orbit + List</span></div>
+          <div class="clip"><video data-src="assets/demo2.mp4" poster="assets/demo2.jpg" muted loop playsinline preload="none" aria-label="مثال: مشهد نيون وقائمة ذكية"></video><span class="tag">demo_02 · Neon + Stack</span></div>
+          <div class="clip"><video data-src="assets/demo3.mp4" poster="assets/demo3.jpg" muted loop playsinline preload="none" aria-label="مثال: ملاحظة مثبتة، كلمات، وإشارات حول الشخص"></video><span class="tag">demo_03 · Note + Orbit</span></div>
+        </div>
+        <span class="playhead" aria-hidden="true"></span>
+      </div>
+    </div>
+  </div>
+
+  <section id="what">
+    <div class="wrap">
+      <div class="sh"><div><span class="label">LAYERS</span><h2>كل أداة طبقة بالتايم لاين</h2></div><p>أربع أدوات بمكان واحد. كلها تشتغل على الفيديو الحقيقي، وما تقص منه ولا ثانية.</p></div>
+      <div class="layers">
+        <div class="layer">
+          <div class="lname"><i style="background:#FF8A5B"></i><div><b>المونتاج التلقائي</b><code>Auto Edit</code></div></div>
+          <div class="lbody"><div>
+            <p>يفرّغ الكلام ويفهمه: إذا الشخص عدّد أشياء تطلع قائمة وكل عنصر يظهر بلحظة ما ينذكر، وإذا ذكر رقم يطلع رقم كبير، والكلمات المهمة تصير زجاج أو تمييز. ويضيف عنوان بالبداية، وزووم، وانتقالات بالوقفات، ودعوة للتواصل بالنهاية، ويا أصوات لكل عنصر.</p>
+            <div class="chips"><span class="chip">كل المونتاج خطوة وحدة Ctrl+Z</span><span class="chip">تراجع وعدّل أي عنصر قبل التطبيق</span><span class="chip">إيقاع هادئ / متوسط / قوي</span></div>
+          </div><div class="bar" style="background:#FF8A5B" aria-hidden="true"></div></div>
+        </div>
+        <div class="layer">
+          <div class="lname"><i style="background:#FFD84D"></i><div><b>كابشن عربي</b><code>Auto Captions</code></div></div>
+          <div class="lbody"><div>
+            <p>تفريغ الكلام يصير على جهازك، ويفهم اللهجة العراقية. تصحح أي كلمة وتبقى التوقيتات مضبوطة، وتحط الكلمة المهمة بين [ ] حتى تطلع بلون وحركة.</p>
+            <div class="chips"><span class="chip">٧ ستايلات</span><span class="chip">كلمة بكلمة</span><span class="chip">طبقة وحدة للكابشن كله</span></div>
+          </div><div class="bar" style="background:#FFD84D" aria-hidden="true"></div></div>
+        </div>
+        <div class="layer">
+          <div class="lname"><i style="background:#5CFFA0"></i><div><b>فيسلس</b><code>Faceless Scenes</code></div></div>
+          <div class="lbody"><div>
+            <p>مشاهد كاملة تغطي الفيديو لما ما تريد الشخص يبين: نيون، منتج واقعي، مجسّم، كولاج ورقي، ملاحظة مثبّتة، وكلمات تنط. تبدّل الصورة بصورة منتجك وتحرّكها وتكبّرها براحتك.</p>
+            <div class="chips"><span class="chip">٦ مشاهد</span><span class="chip">حركة ارتداد ناعمة</span><span class="chip">٤ ألوان لكل مشهد</span></div>
+          </div><div class="fig"><video data-src="assets/faceless.mp4" poster="assets/faceless.jpg" muted loop playsinline preload="none" aria-label="مشاهد فيسلس"></video></div></div>
+        </div>
+        <div class="layer">
+          <div class="lname"><i style="background:#A898FF"></i><div><b>مكتبة موشن</b><code>Library</code></div></div>
+          <div class="lbody"><div>
+            <p>عناوين، تمييز كلمات، كبسولات، أزرار دعوة، قوائم ومؤشر، زجاج حقيقي يغبّش الفيديو اللي وراه، بطاقات وأرقام، إشارات مدارية، انتقالات وحركة كاميرا، ومكتبة أصوات.</p>
+            <div class="chips"><span class="chip">+١٢٠ عنصر</span><span class="chip">+١٣٠ مؤثر صوتي</span><span class="chip">عربي وإنجليزي</span></div>
+          </div><div class="bar" style="background:#A898FF" aria-hidden="true"></div></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="premiere">
+    <div class="wrap">
+      <div class="sh"><div><span class="label">PREMIERE PRO</span><h2>راوي صار على البريمير</h2></div><p>نفس راوي ونفس كود التفعيل. إذا مفعّل بالأفترافكت، يشتغل بالبريمير على نفس الجهاز بدون تفعيل ثاني.</p></div>
+      <div class="steps">
+        <div class="step"><b>١٢٦ عنصر جاهز</b><p>نصوص متحركة، زجاج سائل ومصنفر، أيقونات، ستايل ترند، نيون وفيسلس. تضغط على العنصر وينزل بمكان المؤشر بالتايم لاين.</p></div>
+        <div class="step"><b>كل التحكم من Properties</b><p>النص والخط والألوان والحجم والحركة بمجلدات مرتبة، وتسحب الفيديو على خلفية الزجاج حتى يتغبّش وراه.</p></div>
+        <div class="step"><b>كل انتقالات البريمير بالعربي</b><p>١٢٨ انتقال بأسماء عربية وانتقالات راوي، ومنحنيات الحركة على الفريمات، وأصوات لكل عنصر.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="inside">
+    <div class="wrap inside">
+      <div class="sh"><div><span class="label">INSIDE AFTER EFFECTS</span><h2>تعاين قبل ما تدرج، وتعدّل بعده</h2></div></div>
+      <div class="shot"><img src="assets/panel.jpg" alt="لوحة راوي داخل After Effects: مكتبة المكونات على اليمين، والمعاينة والتعديل على اليسار" width="1388" height="1170" loading="lazy"></div>
+      <div class="points">
+          <div class="pt"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 12h16M12 4v16"/></svg><div><b>طبقة وحدة لكل عنصر</b><span>كل مكوّن يدخل precomp واحد يتكيف ويا النص والمقاس.</span></div></div>
+          <div class="pt"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12l4 4L19 6"/></svg><div><b>اضغط على الطبقة، تنفتح إعداداتها</b><span>تحدد الطبقة بالتايم لاين وتعدّل الألوان والنص والحركة، والتغيير ينطبق فوراً.</span></div></div>
+          <div class="pt"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 7h16M4 12h10M4 17h13"/></svg><div><b>عربي أولاً</b><span>النص من اليمين لليسار مضبوط، والخطوط العربية مرتبة، والواجهة كلها بالعربي.</span></div></div>
+          <div class="pt"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="8"/><path d="M12 8v4l3 2"/></svg><div><b>تلگاها من القائمة</b><span><span class="path">Window › Extensions › Rawi</span></span></div></div>
+        </div>
+    </div>
+  </section>
+
+  <section id="download">
+    <div class="wrap">
+      <div class="sh"><div><span class="label">DOWNLOAD</span><h2>حمّل راوي وثبّته بنفسك</h2></div><p>التحميل مجاني. الإضافة تشتغل بعد ما تفعّلها بكود تجربة أو كود النسخة الكاملة.</p></div>
+      <div class="dlbox">
+        <div class="a">
+          <h3>راوي لـ After Effects و Premiere Pro</h3>
+          <div style="color:var(--muted)">ملف تثبيت واحد ينصّب الاثنين، بدقيقة وبدون صلاحيات مدير.</div>
+          <div class="dlmeta"><span>ويندوز 10 و 11 · <bdi>64-bit</bdi></span><span><bdi>After Effects 2022</bdi> أو أحدث</span><span><bdi>Premiere Pro 2025</bdi> أو أحدث</span><span class="v" id="dlVer">v1.14.2</span><span class="v" id="dlSize">110 MB</span></div>
+          <a class="btn dl" data-dl href="#"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 4v11M7 10.5l5 5 5-5M5 19.5h14"/></svg>تحميل لويندوز</a>
+          <div class="dlnote">إذا طلعت رسالة <code>Windows protected your PC</code> اضغط <code>More info</code> وبعدها <code>Run anyway</code>. تطلع لأن الملف جديد ومو موقّع بعد، وهو آمن.</div>
+          <div class="dlnote" style="border-color:var(--line-2);background:transparent">عندك ماك؟ <a href="/download" style="color:var(--mint);font-weight:700">حمّل نسخة الماك</a> — تتثبت بسطر واحد بالـ <bdi>Terminal</bdi>. كل الأدوات تشتغل على الماك، ومنها الكابشن التلقائي.</div>
+        </div>
+        <div class="b">
+          <ol>
+            <li><div><b>سكّر After Effects و Premiere Pro</b> وافتح الملف اللي حمّلته، وبداخله دبل كلك على <bdi>Rawi-Setup.exe</bdi>.</div></li>
+            <li><div><b>افتح After Effects أو Premiere Pro</b> ومن القائمة <span class="path">Window › Extensions › Rawi</span></div></li>
+            <li><div><b>اضغط «اطلب تجربة يومين»</b> بشاشة التفعيل، والتجربة تتفعّل خلال ثواني.</div></li>
+            <li><div><b>للنسخة الكاملة:</b> اشترِ من <a href="#price" data-buy style="color:var(--mint);font-weight:700">المتجر</a>، وبعدها اضغط «دفعت؟ فعّل النسخة الكاملة» واكتب رقم الطلب.</div></li>
+          </ol>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="install" hidden>
+    <div class="wrap">
+      <div class="sh"><div><span class="label">INSTALL</span><h2>شوف طريقة التثبيت</h2></div><p>فيديو قصير خطوة بخطوة: من التحميل لحد ما تتفعّل التجربة.</p></div>
+      <div class="ivtabs" role="tablist" aria-label="نظام التشغيل"><button type="button" role="tab" data-ivtab="win" aria-selected="true">ويندوز</button><button type="button" role="tab" data-ivtab="mac" aria-selected="false">ماك</button></div>
+      <div id="ivBox"></div>
+    </div>
+  </section>
+
+  <section id="how">
+    <div class="wrap">
+      <div class="sh"><div><span class="label">ACTIVATION</span><h2>شلون تحصل راوي</h2></div><p>كل نسخة ترتبط بجهاز واحد. كلشي يصير من داخل الإضافة، وما تحتاج تراسل أحد.</p></div>
+      <div class="steps">
+        <div class="step"><b>حمّل وثبّت</b><p>حمّل ملف التثبيت من هذي الصفحة وثبّته، وافتح راوي من After Effects أو Premiere Pro.</p></div>
+        <div class="step"><b>جرّب يومين مجاناً</b><p>من شاشة التفعيل اضغط «اطلب تجربة يومين»، والتجربة تتفعّل خلال ثواني. التجربة مرة وحدة لكل جهاز.</p><span class="dev">K7Q2M-9XA4P</span></div>
+        <div class="step"><b>اشترِ وفعّل</b><p>ادفع من متجر راوي، وبعدها بنفس الشاشة اضغط «دفعت؟ فعّل النسخة الكاملة» واكتب رقم الطلب. تتفعّل خلال دقايق بدون ما تراسل أحد.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="price">
+    <div class="wrap">
+      <div class="sh"><div><span class="label">PRICING</span><h2>شهري، سنوي، أو مدى الحياة</h2></div></div>
+      <div class="price">
+        <div class="a">
+          <div class="plans">
+            <div class="pl best"><span class="plan">YEARLY</span><span class="tag">الأوفر</span>
+              <div class="amount"><bdi dir="ltr">35,000</bdi> <small>د.ع / سنة</small></div>
+              <div class="fx">≈ <bdi dir="ltr" data-fx="usd" data-iqd="35000">$23.1</bdi> · <bdi dir="ltr" data-fx="egp" data-iqd="35000">1,290</bdi> ج.م</div>
+              <div class="per">أوفر من الشهري بـ <bdi dir="ltr">145,000</bdi> د.ع</div></div>
+            <div class="pl"><span class="plan">MONTHLY</span>
+              <div class="amount"><bdi dir="ltr">15,000</bdi> <small>د.ع / شهر</small></div>
+              <div class="fx">≈ <bdi dir="ltr" data-fx="usd" data-iqd="15000">$9.9</bdi> · <bdi dir="ltr" data-fx="egp" data-iqd="15000">550</bdi> ج.م</div>
+              <div class="per">ادفع شهر بشهر</div></div>
+            <div class="pl life"><span class="plan">LIFETIME</span>
+              <div class="amount"><bdi dir="ltr">75,000</bdi> <small>د.ع · مدى الحياة</small></div>
+              <div class="fx">≈ <bdi dir="ltr" data-fx="usd" data-iqd="75000">$49.5</bdi> · <bdi dir="ltr" data-fx="egp" data-iqd="75000">2,760</bdi> ج.م</div>
+              <div class="per">دفعة وحدة بدون تجديد، وبيها كل التحديثات</div></div>
+          </div>
+          <div class="small-num" style="margin-bottom:10px">الدولار والجنيه المصري تقريبي حسب سعر الصرف اليوم، والدفع بالدينار العراقي.</div>
+          <div style="color:var(--muted)">النسخة الكاملة بكل الأدوات والتحديثات طول مدة اشتراكك.</div>
+          <ul class="inc">
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.2 4L19 7"/></svg>زجاج أبل السائل (Liquid Glass)</li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.2 4L19 7"/></svg>خطوط وزوايا متوهجة للنصوص والصور</li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.2 4L19 7"/></svg>Rawi Glow: توهج ضوئي خفيف على أي طبقة بضغطة</li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.2 4L19 7"/></svg>زجاج سائل ويا صورة: دائرة أو مربع، فوق أو تحت أو على الجوانب</li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.2 4L19 7"/></svg>كابشن بكتلة مربعة وستايلات ناعمة بدون قفزات</li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.2 4L19 7"/></svg>المونتاج التلقائي</li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.2 4L19 7"/></svg>الكابشن العربي بـ ٧ ستايلات</li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.2 4L19 7"/></svg>٦ مشاهد فيسلس</li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.2 4L19 7"/></svg>٢٢ مكوّن موشن و١٩ صوت</li>
+          </ul>
+        </div>
+        <div class="b">
+          <div class="trial"><b>جرّب قبل ما تشتري</b><span>يومين مجاناً بكل الأدوات. بعدها تقرر.</span></div>
+          <div class="small-num">دفع إلكتروني آمن عبر المتجر، والتفعيل من داخل راوي.</div>
+          <a class="btn buy" data-buy href="#"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 5h2l2 10h9.5l2-7H7.2"/><circle cx="9.5" cy="19" r="1.3"/><circle cx="17" cy="19" r="1.3"/></svg>اشترك من المتجر</a>
+          <a class="btn line" data-trial href="/download#trial">اطلب تجربة يومين</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="faq">
+    <div class="wrap">
+      <div class="sh"><div><span class="label">FAQ</span><h2>أسئلة تتكرر</h2></div></div>
+      <div class="faq">
+        <details><summary>من وين أحمّل الإضافة؟</summary><p>من زر «تحميل لويندوز» بهذي الصفحة. التحميل مجاني، وبعد التثبيت تطلب التجربة أو تفعّل النسخة الكاملة من داخل الإضافة.</p></details>
+        <details><summary>على شنو يشتغل؟</summary><p>على After Effects (2022 أو أحدث) و Premiere Pro (2025 أو أحدث)، بالويندوز والماك. كل الأدوات تشتغل على الاثنين، ومنها الكابشن التلقائي.</p></details>
+        <details><summary>شلون أحدّث راوي على الماك؟</summary><p>سكّر After Effects و Premiere Pro، وانسخ سطر التحديث من <a href="/download#macupdate" style="color:var(--mint);font-weight:700">صفحة التحميل</a> والصقه بالـ Terminal. ينزّل بس الملفات اللي تغيّرت ويثبّتها مكان القديمة، والتفعيل يبقى. على الويندوز: حمّل ملف التثبيت الجديد وثبّته فوق القديم.</p></details>
+        <details><summary>أحتاج كود ثاني للبريمير؟</summary><p>لا. نفس كود راوي يشغّل الأفترافكت والبريمير على نفس الجهاز. وإذا عندك راوي من قبل، البريمير يجيك ويا التحديث بدون ما تدفع شي.</p></details>
+        <details><summary>الكابشن يحتاج نت؟</summary><p>التفريغ يصير على جهازك. محرك التفريغ يتحمّل مرة وحدة أول ما تستخدم الكابشن، وبعدها يشتغل بدون نت.</p></details>
+        <details><summary>الكود يشتغل على كم جهاز؟</summary><p>كل كود لجهاز واحد، ويرتبط برقم الجهاز اللي يطلع بشاشة التفعيل. إذا تحتاج جهاز ثاني راسلنا بالتليغرام.</p></details>
+        <details><summary>شنو بيها التجربة؟</summary><p>كل الأدوات بدون استثناء لمدة يومين، ومرة وحدة لكل جهاز. بعد ما تخلص تگدر تشتري النسخة الكاملة وتفعّلها بنفس الشاشة.</p></details>
+        <details><summary>المونتاج التلقائي يقص الفيديو؟</summary><p>لا. يضيف العناصر فوق الفيديو بس، والمقطع الأصلي يبقى مثل ما هو. وكل المونتاج ينشال بـ Ctrl+Z وحدة.</p></details>
+        <details><summary>شلون أدفع؟</summary><p>من <a href="#" data-buy style="color:var(--mint);font-weight:700">متجر راوي</a> بالدفع الإلكتروني: اختار شهري (<bdi dir="ltr">15,000</bdi> د.ع)، سنوي (<bdi dir="ltr">35,000</bdi> د.ع) أو مدى الحياة (<bdi dir="ltr">75,000</bdi> د.ع). بعد الدفع افتح راوي واضغط «دفعت؟ فعّل النسخة الكاملة» واكتب رقم الطلب أو رقم الهاتف اللي دفعت بيه، وتتفعّل النسخة الكاملة خلال دقايق.</p></details>
+        <details><summary>شنو يصير من يخلص الاشتراك؟</summary><p>راوي يرجع لشاشة التفعيل. تجدد من المتجر وتفعّل بنفس الطريقة: «دفعت؟ فعّل النسخة الكاملة» ورقم الطلب الجديد.</p></details>
+      </div>
+    </div>
+  </section>
+
+  <div class="wrap">
+    <div class="contact">
+      <div>
+        <h2>تحتاج مساعدة؟</h2>
+        <p>التجربة والشراء والتفعيل كلها تصير من داخل راوي: اطلب تجربة يومين من شاشة التفعيل، أو اشترِ من المتجر واضغط «دفعت؟ فعّل النسخة الكاملة»، والكود يتفعّل لحاله. إذا واجهتك مشكلة أو عندك سؤال، راسلنا بالتليغرام.</p>
+      </div>
+      <div class="ctas">
+        <a class="btn tg" href="https://t.me/rawiplugin" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 4.5L2.8 11.3c-.8.3-.8 1.4 0 1.7l4.4 1.5 1.7 5.3c.2.7 1.1.9 1.6.4l2.5-2.4 4.6 3.4c.6.4 1.4.1 1.6-.6L22.2 5.7c.2-.8-.5-1.5-1.2-1.2z"/><path d="M7.2 14.5L18 7.5l-8.3 8"/></svg>راسلنا بالتليغرام</a>
+        <a class="btn line" data-buy href="#">اشترِ النسخة الكاملة</a>
+      </div>
+    </div>
+  </div>
+</main>
+
+<footer><div class="wrap"><span>Rawi راوي · إضافة عربية لـ After Effects و Premiere Pro</span><span>After Effects و Premiere Pro علامتان تجاريتان لشركة Adobe.</span></div></footer>
+
+<script>
+  // ---- settings: download + store links
+  const DL_URL = '/download';   // the download page picks Windows/Mac and starts the download (tools/build_web.py)
+  const DL_VERSION = 'v1.14.2', DL_SIZE = '110 MB';
+  document.querySelectorAll('a.btn[data-dl]').forEach((a) => {
+    a.href = DL_URL; a.removeAttribute('download');
+  });
+  document.getElementById('dlVer').textContent = DL_VERSION; document.getElementById('dlSize').textContent = DL_SIZE;
+  const STORE_URL = 'https://rawi.thewayl.com/?lang=en';   // payment gateway (Wayl)
+  document.querySelectorAll('[data-buy]').forEach((a) => { a.href = STORE_URL; a.target = '_blank'; a.rel = 'noopener'; });
+  // Meta Pixel events (only when the pixel is on the page: tools/pixel.json)
+  const track = (...a) => { try { if (window.rawiTrack) window.rawiTrack(...a); } catch (e) {} };
+  document.querySelectorAll('[data-buy]').forEach((a) => a.addEventListener('click', () => track('InitiateCheckout', { value: 35000, currency: 'IQD', content_name: 'Rawi Subscription', content_category: 'landing' })));
+  document.querySelectorAll('a.btn[data-dl]').forEach((a) => a.addEventListener('click', () => track('GoToDownload', {}, true)));
+  const PRICE = '';                                     // leave empty: the price is written in the page
+  document.querySelectorAll('video').forEach((v) => { v.muted = true; v.volume = 0; });   // the demos never play sound
+  if (matchMedia('(prefers-reduced-motion: reduce)').matches) document.querySelectorAll('video[autoplay]').forEach((v) => { v.removeAttribute('autoplay'); v.pause(); });
+</script>
+<script>
+  // the price in US dollars and Egyptian pounds (approximate; payment is in Iraqi dinars): written with Google's rates of
+  // 26 Oct 2026 (1 USD = 1,516 IQD = 55.8 EGP; Iraq's official rate is 1,500 since 7 Oct 2026), refreshed from a live
+  // rate feed when it answers (sane values only)
+  (function () {
+    var R = { iqd: 1516, egp: 55.8 };
+    function put() {
+      document.querySelectorAll('[data-fx]').forEach(function (el) {
+        var usd = Number(el.getAttribute('data-iqd')) / R.iqd;
+        el.textContent = el.getAttribute('data-fx') === 'usd' ? '$' + (Math.round(usd * 10) / 10).toLocaleString('en-US') : (Math.round(usd * R.egp / 10) * 10).toLocaleString('en-US');
+      });
+    }
+    try { fetch('https://open.er-api.com/v6/latest/USD').then(function (r) { return r.json(); }).then(function (j) { var q = j && j.rates;
+      if (q && q.IQD > 1000 && q.IQD < 2000 && q.EGP > 30 && q.EGP < 120) { R.iqd = q.IQD; R.egp = q.EGP; put(); } }).catch(function () {}); } catch (e) {}
+  })();
+</script>
+
+<script>
+  // demo videos load only when the visitor asks for them (tap / click, or hover with a mouse): the poster shows until then.
+  // Keeps the site inside the free hosting quota (Firebase Spark = 360 MB/day); most ad visitors are on phones.
+  (function () {
+    var vids = [].slice.call(document.querySelectorAll('video[data-src]'));
+    var hover = window.matchMedia && matchMedia('(hover: hover) and (pointer: fine)').matches;
+    function start(v) { if (!v.src) { v.src = v.getAttribute('data-src'); } var p = v.play(); if (p && p.catch) p.catch(function () {}); v.parentNode.classList.add('playing'); }
+    function stop(v) { if (v.src) v.pause(); v.parentNode.classList.remove('playing'); }
+    vids.forEach(function (v) {
+      var box = v.parentNode, b = document.createElement('button');
+      b.type = 'button'; b.className = 'vplay'; b.setAttribute('aria-label', T('تشغيل المثال'));
+      b.innerHTML = '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5.5v13l11-6.5z" fill="currentColor"/></svg>';
+      box.appendChild(b);
+      box.addEventListener('click', function () { if (v.paused || !v.src) start(v); else stop(v); });
+      if (hover) { box.addEventListener('mouseenter', function () { start(v); }); box.addEventListener('mouseleave', function () { stop(v); }); }
+    });
+  })();
+</script>
+<script>
+  // ---- install videos (YouTube, unlisted). IDs come from tools/install_videos.json (tools/build_web.py writes them here).
+  //      Only a small thumbnail loads from YouTube until the visitor presses play, so nothing counts against the site quota.
+  (function () {
+    var IV = /*IV*/{"win": "jgZxtMjvuR4", "mac": "6Ttp1OS1Z0k"}/*IV*/;
+    function vid(s) { s = String(s || '').trim(); var m = s.match(/(?:youtu\.be\/|v=|embed\/|shorts\/|live\/)([\w-]{11})/); return m ? m[1] : (/^[\w-]{11}$/.test(s) ? s : ''); }
+    var ids = { win: vid(IV.win), mac: vid(IV.mac) };
+    function facade(id, label) {
+      var b = document.createElement('button'); b.type = 'button'; b.className = 'ivf'; b.setAttribute('aria-label', label);
+      b.innerHTML = '<img alt="" src="https://i.ytimg.com/vi/' + id + '/hqdefault.jpg"><span class="ivp"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5.5v13l11-6.5z" fill="currentColor"/></svg></span><span class="ivl">' + label + '</span>';
+      b.addEventListener('click', function () {
+        var f = document.createElement('iframe'); f.className = 'ivframe'; f.title = label;
+        f.src = 'https://www.youtube-nocookie.com/embed/' + id + '?autoplay=1&rel=0&modestbranding=1&playsinline=1';
+        f.allow = 'autoplay; encrypted-media; picture-in-picture; fullscreen'; f.allowFullscreen = true; b.replaceWith(f);
+      });
+      return b;
+    }
+    window.RAWI_IV = { ids: ids, facade: facade };
+    [].forEach.call(document.querySelectorAll('[data-iv]'), function (slot) {
+      var os = slot.getAttribute('data-iv'); if (!ids[os]) return;
+      slot.appendChild(facade(ids[os], os === 'mac' ? T('فيديو التثبيت على الماك') : T('فيديو التثبيت على ويندوز'))); slot.hidden = false;
+    });
+    var sec = document.getElementById('install'); if (!sec || (!ids.win && !ids.mac)) return;
+    var tabs = [].slice.call(sec.querySelectorAll('[data-ivtab]')), box = document.getElementById('ivBox');
+    var mac = /Mac/i.test(navigator.platform || '') || /Macintosh/i.test(navigator.userAgent || '');
+    function pick(os) { tabs.forEach(function (t) { t.setAttribute('aria-selected', String(t.getAttribute('data-ivtab') === os)); }); box.innerHTML = ''; box.appendChild(facade(ids[os], os === 'mac' ? T('فيديو التثبيت على الماك') : T('فيديو التثبيت على ويندوز'))); }
+    tabs.forEach(function (t) { var os = t.getAttribute('data-ivtab'); if (!ids[os]) t.hidden = true; t.addEventListener('click', function () { pick(os); }); });
+    sec.hidden = false; var nl = document.getElementById('navInstall'); if (nl) nl.hidden = false;
+    pick(ids[mac ? 'mac' : 'win'] ? (mac ? 'mac' : 'win') : (ids.win ? 'win' : 'mac'));
+  })();
+</script>
+</body>
+</html>

@@ -1,0 +1,384 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>تحميل راوي</title>
+<meta name="description" content="تحميل راوي لـ After Effects و Premiere Pro">
+<link rel="icon" href="/download/favicon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Alexandria:wght@900&family=IBM+Plex+Sans+Arabic:wght@500;700&display=swap" rel="stylesheet">
+<style>
+:root{--night:#0A1317;--card:#12242B;--text:#EAF3F2;--muted:#8FA9AD;--mint:#7CF2C8;--m2:#34CFA0;--ink:#062A20;--line:rgba(137,170,176,.18)}
+*{box-sizing:border-box;margin:0;padding:0}
+body{min-height:100vh;background:radial-gradient(900px 600px at 50% -10%,rgba(52,207,160,.18),transparent 70%),var(--night);color:var(--text);font-family:'IBM Plex Sans Arabic',system-ui,sans-serif;display:flex;align-items:center;justify-content:center;padding:32px 16px}
+main{width:100%;max-width:520px;text-align:center}
+.logo{width:88px;height:88px;border-radius:24px;box-shadow:0 18px 50px rgba(52,207,160,.25)}
+h1{font:900 40px/1.2 Alexandria,sans-serif;margin:22px 0 8px}
+.sub{color:var(--muted);font-size:17px;line-height:1.7}
+.meta{display:flex;flex-wrap:wrap;gap:8px;justify-content:center;margin:18px 0 22px}
+.meta span{padding:6px 12px;border-radius:999px;border:1px solid var(--line);font-size:14px;color:var(--muted)}
+.btn{display:flex;align-items:center;justify-content:center;gap:12px;width:100%;padding:18px 20px;border-radius:16px;background:linear-gradient(180deg,#9BF7D6,#34CFA0);color:var(--ink);font:700 20px/1 'IBM Plex Sans Arabic',sans-serif;text-decoration:none;box-shadow:0 14px 40px rgba(52,207,160,.3)}
+.btn:active{transform:scale(.98)}
+.note{margin-top:12px;font-size:14px;color:var(--muted)}
+.card{margin-top:26px;text-align:right;background:var(--card);border:1px solid var(--line);border-radius:18px;padding:20px 22px}
+.card h2{font:700 18px/1.3 'IBM Plex Sans Arabic',sans-serif;margin-bottom:12px}
+ol{padding-right:20px;line-height:1.9;font-size:15.5px}
+ol li::marker{color:var(--mint);font-weight:700}
+.warn{margin-top:12px;font-size:14px;line-height:1.7;color:var(--muted)}
+.warn b{color:var(--text)}
+bdi{unicode-bidi:isolate}
+.alt{margin-top:12px;font-size:15px;color:var(--muted)}
+.alt a{color:var(--mint);font-weight:700;text-decoration:none}
+.os{display:none}
+body.win .os.win,body.mac .os.mac{display:block}
+code.cmd{display:block;direction:ltr;text-align:left;margin:8px 0 4px;padding:10px 12px;border-radius:10px;background:#081014;border:1px solid var(--line);font:600 14px/1.5 ui-monospace,Menlo,Consolas,monospace;color:#CFF7E8;user-select:all;word-break:break-all}
+.upd{border-color:rgba(124,242,200,.35)}.upd p.s{color:var(--muted);font-size:14.5px;line-height:1.7;margin:6px 0 4px}
+.cpy{margin-top:8px;padding:9px 16px;border-radius:10px;border:1px solid rgba(124,242,200,.45);background:rgba(124,242,200,.1);color:var(--mint);font:700 14px/1 'IBM Plex Sans Arabic',sans-serif;cursor:pointer}
+.note2{margin-top:10px;font-size:13.5px;color:var(--muted);line-height:1.7}
+.req h2{margin-bottom:6px}
+.req p.s,.buy p.s{color:var(--muted);font-size:14.5px;line-height:1.7;margin-bottom:14px}
+.req label{display:block;font-size:14px;color:var(--muted);margin:10px 0 6px}
+.req input{width:100%;padding:12px 14px;border-radius:12px;border:1px solid var(--line);background:#081014;color:var(--text);font:600 16px/1.3 'IBM Plex Sans Arabic',sans-serif}
+.req input.ltr{direction:ltr;text-align:left;font-family:ui-monospace,Menlo,Consolas,monospace;letter-spacing:1px}
+.req .hp{position:absolute;inset-inline-start:0;width:1px;height:1px;opacity:0;overflow:hidden;clip-path:inset(50%);pointer-events:none}
+.req button{margin-top:16px;width:100%;padding:14px;border:0;border-radius:14px;background:linear-gradient(180deg,#9BF7D6,#34CFA0);color:var(--ink);font:700 17px/1 'IBM Plex Sans Arabic',sans-serif;cursor:pointer}
+.req button:disabled{opacity:.55;cursor:default}
+.rq-msg{margin-top:12px;font-size:14.5px;line-height:1.7;min-height:1px}
+  .rq-tg { display: block; margin-top: 12px; padding: 12px 16px; border-radius: 12px; background: #229ED9; color: #fff; font-weight: 700; text-align: center; text-decoration: none; }
+.rq-msg.ok{color:var(--mint)}.rq-msg.err{color:#ff9c9c}
+.rq-warn{margin:2px 0 6px;padding:12px 14px;border-radius:12px;background:rgba(255,216,77,.08);border:1px solid rgba(255,216,77,.35);color:#F3DE8A;font-size:14px;line-height:1.75}
+.rq-warn b{color:#FFE48A}.rq-warn bdi{white-space:nowrap}.rq-warn .ex{font-family:ui-monospace,Menlo,Consolas,monospace;letter-spacing:.5px}
+.rq-warn.hot{background:rgba(255,120,120,.12);border-color:rgba(255,120,120,.6);color:#FFC2C2}.rq-warn.hot b{color:#FFD6D6}
+.rq-code{display:none;margin-top:12px;direction:ltr;text-align:left;padding:12px;border-radius:12px;background:#081014;border:1px solid var(--mint);font:600 12.5px/1.5 ui-monospace,Menlo,Consolas,monospace;color:#CFF7E8;word-break:break-all;user-select:all}
+  .card.buy h2 s { opacity: .55; font-weight: 600; }
+  .buybtn { display: block; text-align: center; margin-top: 12px; padding: 13px 16px; border-radius: 13px; background: #FFD84D; color: #1d1600; font-weight: 800; text-decoration: none; }
+  .buybtn:hover { filter: brightness(1.06); }
+  .tg { display: inline-flex; align-items: center; gap: 8px; margin-top: 22px; color: #5CC3F2; text-decoration: none; font-weight: 700; font-size: 16px; }
+.ivslot{margin:16px 0 4px}
+.ivf,.ivframe{position:relative;display:block;width:100%;aspect-ratio:16/9;border-radius:14px;overflow:hidden;border:1px solid var(--line);background:#000}
+.ivf{padding:0;cursor:pointer}
+.ivf img{width:100%;height:100%;object-fit:cover;opacity:.9}
+.ivp{position:absolute;left:50%;top:50%;width:62px;height:62px;margin:-31px 0 0 -31px;border-radius:50%;background:var(--mint);color:var(--ink);display:grid;place-items:center;box-shadow:0 10px 28px rgba(124,242,200,.35)}
+.ivp svg{width:28px;height:28px;margin-left:3px}
+.ivl{position:absolute;inset-inline-start:10px;bottom:10px;padding:6px 10px;border-radius:9px;background:rgba(10,19,23,.82);font:700 13px/1.2 'IBM Plex Sans Arabic',sans-serif;color:var(--text)}
+.mob{display:none;text-align:center}
+body.mobile .mob{display:block}
+.mob p.s{color:var(--muted);font-size:15px;line-height:1.8;margin:6px 0 12px}
+.mob .mbt{display:flex;gap:10px;margin-top:12px}
+.mob .mbt button{flex:1;padding:13px;border:0;border-radius:13px;font:700 16px/1 'IBM Plex Sans Arabic',sans-serif;cursor:pointer}
+.mob .mbt .p{background:linear-gradient(180deg,#9BF7D6,#34CFA0);color:var(--ink)}
+.mob .mbt .g{background:transparent;color:var(--text);border:1px solid var(--line)}
+</style>
+<!-- Meta Pixel (tools/pixel.json, written by tools/build_web.py) -->
+<script>
+!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,document,'script','https://connect.facebook.net/en_US/fbevents.js');
+fbq('init', '1531344805693860');
+fbq('track', 'PageView');
+(function () {
+  // remember which ad brought the visitor (utm_content = country: iq / sa / ae) so later events carry it
+  var K = 'rawi.src', s = null;
+  try { var q = new URLSearchParams(location.search); if (q.get('utm_source')) s = { src: q.get('utm_source'), campaign: q.get('utm_campaign') || '', country: q.get('utm_content') || '', at: Date.now() }; } catch (e) {}
+  try { if (s) localStorage.setItem(K, JSON.stringify(s)); else s = JSON.parse(localStorage.getItem(K) || 'null'); } catch (e) {}
+  window.rawiSrc = s || {};
+  // rawiTrack(event, params, custom?, oncePerSession?)
+  window.rawiTrack = function (ev, p, custom, once) {
+    try {
+      if (once) { var k = 'rawi.ev.' + ev; if (sessionStorage.getItem(k)) return; sessionStorage.setItem(k, '1'); }
+      var d = {}; for (var x in (p || {})) d[x] = p[x];
+      if (window.rawiSrc.country) d.ad_country = window.rawiSrc.country;
+      fbq(custom ? 'trackCustom' : 'track', ev, d);
+    } catch (e) {}
+  };
+})();
+</script>
+<noscript><img height="1" width="1" style="display:none" alt="" src="https://www.facebook.com/tr?id=1531344805693860&ev=PageView&noscript=1"></noscript>
+</head>
+<body>
+<!--I18N-->
+<script>
+(function () {
+  var D = /*D*/{"Rawi راوي — مونتاج عربي تلقائي لـ After Effects":"Rawi — automatic Arabic editing for After Effects","تحچي، وراوي يسوّي المونتاج: كابشن عربي، قوائم، أرقام، مشاهد فيسلس وانتقالات بضغطة وحدة.":"You talk, and Rawi does the edit: Arabic captions, lists, numbers, faceless scenes and transitions in one click.","Rawi راوي":"Rawi","راوي Rawi: إضافة After Effects عربية تسوي المونتاج من الكلام: كابشن عربي، مشاهد فيسلس، ومكتبة موشن تتعدل من التايم لاين.":"Rawi: an Arabic-first After Effects extension that edits from speech: Arabic captions, faceless scenes and a motion library you adjust right from the timeline.","راوي · After Effects":"Rawi · After Effects","الأقسام":"Sections","شنو يسوي":"What it does","التحميل":"Download","التثبيت":"Install","شلون تحصله":"How to get it","السعر":"Price","أسئلة":"FAQ","جرّب مجاناً":"Try it free","يومين":"for 2 days","تحچي، و":"You talk, and ","راوي":"Rawi","يسوّي المونتاج.":"does the edit.","إضافة After Effects عربية تسمع الفيديو وتركّب فوقه":"An Arabic-first After Effects extension that listens to your video and builds on top of it","العناوين والقوائم والكابشن والانتقالات والأصوات":"titles, lists, captions, transitions and sounds","بضغطة وحدة. وكل عنصر يبقى طبقة وحدة تتعدل من التايم لاين.":"in one click. Every element stays a single layer you can edit from the timeline.","حمّل راوي مجاناً":"Download Rawi free","السعر والتجربة المجانية":"Price and free trial","التجربة يومين مجاناً وبيها كل الأدوات. تطلبها من داخل الإضافة بضغطة، والكود يتفعّل تلقائياً.":"The 2-day trial is free and includes every tool. Request it from inside the extension in one click, and the code activates automatically.","أمثلة معمولة براوي":"Made with Rawi","مثال: إشارات مدارية، قائمة، رقم، ومشهد فيسلس":"Example: orbit callouts, a list, a number and a faceless scene","مثال: مشهد نيون وقائمة ذكية":"Example: a neon scene and a smart list","مثال: ملاحظة مثبتة، كلمات، وإشارات حول الشخص":"Example: a pinned note, words and callouts around the speaker","كل أداة طبقة بالتايم لاين":"Every tool is a layer on your timeline","أربع أدوات بمكان واحد. كلها تشتغل على الفيديو الحقيقي، وما تقص منه ولا ثانية.":"Four tools in one place. They all work on your real footage and never cut a single second of it.","المونتاج التلقائي":"Auto Edit","يفرّغ الكلام ويفهمه: إذا الشخص عدّد أشياء تطلع قائمة وكل عنصر يظهر بلحظة ما ينذكر، وإذا ذكر رقم يطلع رقم كبير، والكلمات المهمة تصير زجاج أو تمييز. ويضيف عنوان بالبداية، وزووم، وانتقالات بالوقفات، ودعوة للتواصل بالنهاية، ويا أصوات لكل عنصر.":"Transcribes and understands the speech: when the speaker lists things, a list appears with each item at the moment it's mentioned; a number becomes a big number; key words turn into glass or highlights. It adds an opening title, zooms, transitions on pauses and a call to action at the end, with sounds for every element.","كل المونتاج خطوة وحدة Ctrl+Z":"The whole edit is one Ctrl+Z step","تراجع وعدّل أي عنصر قبل التطبيق":"Review and change any element before applying","إيقاع هادئ / متوسط / قوي":"Calm / medium / strong pacing","كابشن عربي":"Arabic captions","تفريغ الكلام يصير على جهازك، ويفهم اللهجة العراقية. تصحح أي كلمة وتبقى التوقيتات مضبوطة، وتحط الكلمة المهمة بين [ ] حتى تطلع بلون وحركة.":"Transcription runs on your computer and understands the Iraqi dialect. Fix any word and the timing stays exact; put a key word in [ ] to give it its own colour and motion.","٧ ستايلات":"7 styles","كلمة بكلمة":"Word by word","طبقة وحدة للكابشن كله":"One layer for all the captions","فيسلس":"Faceless","مشاهد كاملة تغطي الفيديو لما ما تريد الشخص يبين: نيون، منتج واقعي، مجسّم، كولاج ورقي، ملاحظة مثبّتة، وكلمات تنط. تبدّل الصورة بصورة منتجك وتحرّكها وتكبّرها براحتك.":"Full scenes that cover the video when you don't want the speaker on screen: neon, real product, 3D object, paper collage, pinned note and bouncing words. Swap in a photo of your product, then move and scale it freely.","٦ مشاهد":"6 scenes","حركة ارتداد ناعمة":"Soft bounce motion","٤ ألوان لكل مشهد":"4 colour sets per scene","مشاهد فيسلس":"Faceless scenes","مكتبة موشن":"Motion library","عناوين، تمييز كلمات، كبسولات، أزرار دعوة، قوائم ومؤشر، زجاج حقيقي يغبّش الفيديو اللي وراه، بطاقات وأرقام، إشارات مدارية، انتقالات وحركة كاميرا، ومكتبة أصوات.":"Titles, highlighted words, pills, call-to-action buttons, lists and cursor, real glass that frosts the video behind it, cards and numbers, orbit callouts, transitions and camera moves, and a sound library.","٢٢ مكوّن":"22 components","١٩ صوت":"19 sounds","عربي وإنجليزي":"Arabic and English","تعاين قبل ما تدرج، وتعدّل بعده":"Preview before you insert, edit after","لوحة راوي داخل After Effects: مكتبة المكونات على اليمين، والمعاينة والتعديل على اليسار":"The Rawi panel inside After Effects: the component library on the right, preview and settings on the left","طبقة وحدة لكل عنصر":"One layer per element","كل مكوّن يدخل precomp واحد يتكيف ويا النص والمقاس.":"Each component goes into a single precomp that adapts to the text and the frame size.","اضغط على الطبقة، تنفتح إعداداتها":"Click the layer and its settings open","تحدد الطبقة بالتايم لاين وتعدّل الألوان والنص والحركة، والتغيير ينطبق فوراً.":"Select the layer on the timeline and change colours, text and motion; changes apply instantly.","عربي أولاً":"Arabic first","النص من اليمين لليسار مضبوط، والخطوط العربية مرتبة، والواجهة كلها بالعربي.":"Right-to-left text set correctly, Arabic fonts handled properly, and a fully Arabic interface.","تلگاها من القائمة":"Find it in the menu","حمّل راوي وثبّته بنفسك":"Download Rawi and install it yourself","التحميل مجاني. الإضافة تشتغل بعد ما تفعّلها بكود تجربة أو كود النسخة الكاملة.":"The download is free. The extension works once you activate it with a trial code or a full-version code.","راوي لـ After Effects":"Rawi for After Effects","ملف تثبيت واحد، يتثبّت بدقيقة وبدون صلاحيات مدير.":"One installer, installs in a minute, no admin rights needed.","ويندوز 10 و 11 ·":"Windows 10 and 11 ·","أو أحدث":"or newer","تحميل لويندوز":"Download for Windows","إذا طلعت رسالة":"If you see","اضغط":"click","وبعدها":"then",". تطلع لأن الملف جديد ومو موقّع بعد، وهو آمن.":". It appears because the file is new and not signed yet; it is safe.","عندك ماك؟":"On a Mac?","حمّل نسخة الماك":"Download the Mac version","— تتثبت بسطر واحد بالـ":"— installs with one line in","سكّر After Effects":"Quit After Effects","وافتح الملف اللي حمّلته، وبداخله دبل كلك على":"then open the file you downloaded and double-click","افتح After Effects":"Open After Effects","ومن القائمة":"and from the menu","اضغط «اطلب تجربة يومين»":"Click “Request a 2-day trial”","بشاشة التفعيل، والكود يتفعّل تلقائياً بعد الموافقة.":"on the activation screen; the code activates automatically once approved.","للنسخة الكاملة:":"For the full version:","اشترِ من":"buy from the","المتجر":"store","، وبعدها اضغط «دفعت؟ فعّل النسخة الكاملة» واكتب رقم الطلب.":", then click “Paid? Activate the full version” and enter your order number.","شوف طريقة التثبيت":"Watch how to install","فيديو قصير خطوة بخطوة: من التحميل لحد ما تتفعّل التجربة.":"A short step-by-step video: from download until the trial is active.","نظام التشغيل":"Operating system","ويندوز":"Windows","ماك":"Mac","شلون تحصل راوي":"How to get Rawi","كل نسخة ترتبط بجهاز واحد. كلشي يصير من داخل الإضافة، وما تحتاج تراسل أحد.":"Each licence is tied to one computer. Everything happens inside the extension; you don't need to message anyone.","حمّل وثبّت":"Download and install","حمّل ملف التثبيت من هذي الصفحة وثبّته، وافتح راوي من After Effects.":"Download the installer from this page, install it, and open Rawi from After Effects.","جرّب يومين مجاناً":"Try it free for 2 days","من شاشة التفعيل اضغط «اطلب تجربة يومين». رقم جهازك ينرسل ويا الطلب، والكود يتفعّل تلقائياً.":"On the activation screen click “Request a 2-day trial”. Your device ID is sent with the request and the code activates automatically.","اشترِ وفعّل":"Buy and activate","ادفع من متجر راوي، وبعدها بنفس الشاشة اضغط «دفعت؟ فعّل النسخة الكاملة» واكتب رقم الطلب. تتفعّل خلال دقايق بدون ما تراسل أحد.":"Pay in the Rawi store, then on the same screen click “Paid? Activate the full version” and enter your order number. It activates within minutes, no messages needed.","وفّر":"Save","زجاج أبل السائل (Liquid Glass)":"Apple-style Liquid Glass","خطوط وزوايا متوهجة للنصوص والصور":"Glowing lines and corners for text and images","Rawi Glow: توهج ضوئي خفيف على أي طبقة بضغطة":"Rawi Glow: a soft light glow on any layer in one click","زجاج سائل ويا صورة: دائرة أو مربع، فوق أو تحت أو على الجوانب":"Liquid glass with a picture: circle or square, above, below or on the sides","كابشن بكتلة مربعة وستايلات ناعمة بدون قفزات":"Block captions and smooth styles without jumps","الكابشن العربي بـ ٧ ستايلات":"Arabic captions in 7 styles","٦ مشاهد فيسلس":"6 faceless scenes","٢٢ مكوّن موشن و١٩ صوت":"22 motion components and 19 sounds","جرّب قبل ما تشتري":"Try before you buy","يومين مجاناً بكل الأدوات. بعدها تقرر.":"2 days free with every tool. Then decide.","دفع إلكتروني آمن عبر المتجر، والتفعيل من داخل راوي.":"Secure online payment through the store; activation happens inside Rawi.","اطلب تجربة يومين":"Request a 2-day trial","أسئلة تتكرر":"Frequently asked questions","من وين أحمّل الإضافة؟":"Where do I download the extension?","من زر «تحميل لويندوز» بهذي الصفحة. التحميل مجاني، وبعد التثبيت تطلب التجربة أو تفعّل النسخة الكاملة من داخل الإضافة.":"From the “Download for Windows” button on this page. The download is free; after installing, request the trial or activate the full version from inside the extension.","على شنو يشتغل؟":"What does it run on?","الكابشن يحتاج نت؟":"Do captions need internet?","التفريغ يصير على جهازك. محرك التفريغ يتحمّل مرة وحدة أول ما تستخدم الكابشن، وبعدها يشتغل بدون نت.":"Transcription runs on your computer. The transcription engine downloads once the first time you use captions, then works offline.","الكود يشتغل على كم جهاز؟":"How many computers does a code work on?","كل كود لجهاز واحد، ويرتبط برقم الجهاز اللي يطلع بشاشة التفعيل. إذا تحتاج جهاز ثاني راسلنا بالتليغرام.":"Each code is for one computer and is tied to the device ID shown on the activation screen. Need a second computer? Message us on Telegram.","شنو بيها التجربة؟":"What's in the trial?","كل الأدوات بدون استثناء لمدة يومين. بعد ما تخلص تگدر تشتري النسخة الكاملة وتفعّلها بنفس الشاشة.":"Every tool, no exceptions, for 2 days. When it ends you can buy the full version and activate it on the same screen.","المونتاج التلقائي يقص الفيديو؟":"Does Auto Edit cut my video?","لا. يضيف العناصر فوق الفيديو بس، والمقطع الأصلي يبقى مثل ما هو. وكل المونتاج ينشال بـ Ctrl+Z وحدة.":"No. It only adds elements on top of the video; your original clip stays as it is. And the whole edit is removed with a single Ctrl+Z.","شلون أدفع؟":"How do I pay?","من":"from","متجر راوي":"Rawi store","بالدفع الإلكتروني. بعد الدفع افتح راوي واضغط «دفعت؟ فعّل النسخة الكاملة» واكتب رقم الطلب أو رقم الهاتف اللي دفعت بيه، وتتفعّل النسخة الكاملة خلال دقايق.":"by online payment. After paying, open Rawi, click “Paid? Activate the full version” and enter your order number or the phone number you paid with; the full version activates within minutes.","تحتاج مساعدة؟":"Need help?","التجربة والشراء والتفعيل كلها تصير من داخل راوي: اطلب تجربة يومين من شاشة التفعيل، أو اشترِ من المتجر واضغط «دفعت؟ فعّل النسخة الكاملة»، والكود يتفعّل لحاله. إذا واجهتك مشكلة أو عندك سؤال، راسلنا بالتليغرام.":"Trial, purchase and activation all happen inside Rawi: request a 2-day trial from the activation screen, or buy from the store and click “Paid? Activate the full version”, and the code activates by itself. If you run into a problem or have a question, message us on Telegram.","راسلنا بالتليغرام":"Message us on Telegram","اشترِ النسخة الكاملة":"Buy the full version","Rawi راوي · إضافة After Effects عربية":"Rawi · an Arabic-first After Effects extension","After Effects علامة تجارية لشركة Adobe.":"After Effects is a trademark of Adobe.","تشغيل المثال":"Play the example","فيديو التثبيت على الماك":"Mac install video","فيديو التثبيت على ويندوز":"Windows install video","تحميل راوي":"Download Rawi","تحميل إضافة راوي لبرنامج After Effects":"Download the Rawi extension for After Effects","إضافة عربية لـ":"An Arabic-first extension for","— التحميل يبدأ تلقائياً، وإذا ما بدأ اضغط الزر.":"— the download starts automatically; if it doesn't, click the button.","ويندوز 10 و 11 · ماك":"Windows 10 and 11 · Mac","راوي يشتغل على الكمبيوتر":"Rawi runs on a computer","إضافة لـ":"An extension for","على ويندوز أو ماك. افتح هذا الرابط من كمبيوترك وحمّلها من هناك، والتجربة يومين مجاناً.":"on Windows or Mac. Open this link on your computer and download it there; the trial is 2 days free.","ابعث الرابط لنفسك":"Send the link to yourself","انسخ الرابط":"Copy the link","تحميل نسخة الماك":"Download the Mac version","· تفضّل التثبيت اليدوي؟":"· Prefer a manual install?","ملفات الإضافة":"Extension files","طريقة التثبيت على ويندوز":"How to install on Windows","افتح الملف":"Open","، وبداخله دبل كلك على":", and inside it double-click","واضغط تثبيت.":"and click Install.","افتح":"Open","اضغط «اطلب تجربة يومين» — بعد الموافقة الكود يتفعّل تلقائياً داخل الإضافة.":"Click “Request a 2-day trial” — once approved, the code activates automatically inside the extension.","إذا طلع تحذير ويندوز الأزرق: اضغط":"If the blue Windows warning appears: click","ثم":"then","— لأن الملف جديد وغير موقّع رقمياً بعد.":"— because the file is new and not digitally signed yet.","تحميل للماك":"Download for Mac","عندك ويندوز؟":"On Windows?","تحميل نسخة ويندوز":"Download the Windows version","طريقة التثبيت على الماك":"How to install on Mac","فك ضغط":"Unzip","(دبل كلك) — يطلع مجلد":"(double-click) — a folder","داخل التنزيلات.":"appears in Downloads.","يفكه وحده.":"unzips it by itself.","سكّر":"Close","، وافتح":", open","واكتب":"and type",")، والصق هذا السطر واضغط":"), paste this line and press","ما يطلب كلمة سر. إذا المجلد مو داخل التنزيلات: اكتب":"It doesn't ask for a password. If the folder isn't in Downloads: type","ومسافة، واسحب ملف":"and a space, drag the file","للـ":"into","واضغط":"and press","الكابشن التلقائي":"automatic captions","و":"and","اطلب كود التجربة":"Request a trial code","الأسهل: من داخل الإضافة اضغط «اطلب تجربة يومين» والكود يتفعّل وحده. أو اكتب رقم جهازك هنا (يطلع بشاشة التفعيل داخل راوي) ويطلعلك الكود بنفس الصفحة بعد الموافقة.":"Easiest: inside the extension click “Request a 2-day trial” and the code activates by itself. Or enter your device ID here (shown on Rawi's activation screen) and the code appears on this page once approved.","رقم الجهاز":"Device ID","اسمك":"Your name","مثلاً: أحمد":"e.g. Ahmed","تليغرام أو انستغرام (اختياري)":"Telegram or Instagram (optional)","حتى نتواصل وياك إذا احتجت مساعدة":"so we can reach you if you need help","تابع طلبك على تيليغرام — يوصلك الكود والدعم هناك":"Follow your request on Telegram — you'll get the code and support there","نسخ الكود":"Copy the code","النسخة الكاملة ·":"Full version ·","تحتاج مساعدة؟ راسلنا بالتليغرام":"Need help? Message us on Telegram","راوي — إضافة After Effects":"Rawi — After Effects extension","حمّل راوي من الكمبيوتر:":"Download Rawi on your computer:","تم النسخ ✓":"Copied ✓","افتح الملف <bdi>Rawi-Setup.exe</bdi> واضغط تثبيت.":"Open <bdi>Rawi-Setup.exe</bdi> and click Install.","✓ تمت الموافقة! انسخ الكود، والصقه بشاشة التفعيل داخل راوي واضغط «تفعيل».":"✓ Approved! Copy the code, paste it on the activation screen inside Rawi and click “Activate”.","ما انقبل الطلب":"Request not accepted","✓ وصل طلبك. الكود يطلع هنا تلقائياً خلال دقايق بعد الموافقة — خلي الصفحة مفتوحة.":"✓ Request received. The code appears here automatically within minutes of approval — keep this page open.","اكتب رقم الجهاز كامل (١٠ حروف وأرقام) مثل ما يطلع بشاشة التفعيل.":"Enter the full device ID (10 letters and numbers) exactly as it appears on the activation screen.","جاري الإرسال…":"Sending…","الطلبات كثيرة هسه. جرّب بعد ساعة.":"Too many requests right now. Try again in an hour.","تأكد من رقم الجهاز وحاول مرة ثانية.":"Check the device ID and try again.","ما گدرنا نوصل للسيرفر. تأكد من النت وحاول مرة ثانية.":"We couldn't reach the server. Check your internet and try again.",". كل الأدوات تشتغل على الماك، ومنها الكابشن التلقائي.":". Every tool works on Mac, including auto captions.","على After Effects بالويندوز والماك (2022 أو أحدث). كل الأدوات تشتغل على الاثنين، ومنها الكابشن التلقائي.":"After Effects on Windows and Mac (2022 or newer). Every tool works on both, including auto captions.","على الماك كل القوالب والأدوات تشتغل، ومنها":"On Mac every template and tool works, including","Rawi راوي — مونتاج عربي تلقائي لـ After Effects و Premiere Pro":"Rawi — automatic Arabic editing for After Effects and Premiere Pro","راوي Rawi: إضافة عربية لـ After Effects و Premiere Pro تسوي المونتاج من الكلام: كابشن عربي، مشاهد فيسلس، ومكتبة موشن تتعدل من التايم لاين.":"Rawi: an Arabic-first extension for After Effects and Premiere Pro that edits from speech: Arabic captions, faceless scenes and a motion library you adjust right from the timeline.","راوي · After Effects · Premiere Pro":"Rawi · After Effects · Premiere Pro","يشتغل على":"Works in","إضافة عربية لـ After Effects و Premiere Pro تسمع الفيديو وتركّب فوقه":"An Arabic-first extension for After Effects and Premiere Pro that listens to your video and builds on top of it","+١٢٠ عنصر":"120+ elements","+١٣٠ مؤثر صوتي":"130+ sound effects","راوي صار على البريمير":"Rawi is now in Premiere","نفس راوي ونفس كود التفعيل. إذا مفعّل بالأفترافكت، يشتغل بالبريمير على نفس الجهاز بدون تفعيل ثاني.":"Same Rawi, same activation code. If it is activated in After Effects, it works in Premiere on the same computer with no second activation.","١٢٦ عنصر جاهز":"126 ready elements","نصوص متحركة، زجاج سائل ومصنفر، أيقونات، ستايل ترند، نيون وفيسلس. تضغط على العنصر وينزل بمكان المؤشر بالتايم لاين.":"Animated texts, liquid and frosted glass, icons, Trend Style, neon and faceless scenes. Click an element and it lands at the playhead.","كل التحكم من Properties":"Every control in Properties","النص والخط والألوان والحجم والحركة بمجلدات مرتبة، وتسحب الفيديو على خلفية الزجاج حتى يتغبّش وراه.":"Text, font, colours, size and motion in tidy folders; drop your video on the glass background and it frosts behind it.","كل انتقالات البريمير بالعربي":"Every Premiere transition in Arabic","١٢٨ انتقال بأسماء عربية وانتقالات راوي، ومنحنيات الحركة على الفريمات، وأصوات لكل عنصر.":"128 transitions with Arabic names plus Rawi transitions, motion curves on keyframes, and sounds for every element.","راوي لـ After Effects و Premiere Pro":"Rawi for After Effects and Premiere Pro","ملف تثبيت واحد ينصّب الاثنين، بدقيقة وبدون صلاحيات مدير.":"One installer sets up both, in a minute and without admin rights.","سكّر After Effects و Premiere Pro":"Close After Effects and Premiere Pro","افتح After Effects أو Premiere Pro":"Open After Effects or Premiere Pro","حمّل ملف التثبيت من هذي الصفحة وثبّته، وافتح راوي من After Effects أو Premiere Pro.":"Download the installer from this page, install it, and open Rawi in After Effects or Premiere Pro.","على After Effects (2022 أو أحدث) و Premiere Pro (2025 أو أحدث)، بالويندوز والماك. كل الأدوات تشتغل على الاثنين، ومنها الكابشن التلقائي.":"After Effects (2022 or newer) and Premiere Pro (2025 or newer), on Windows and Mac. Every tool works on both, including auto captions.","أحتاج كود ثاني للبريمير؟":"Do I need another code for Premiere?","لا. نفس كود راوي يشغّل الأفترافكت والبريمير على نفس الجهاز. وإذا عندك راوي من قبل، البريمير يجيك ويا التحديث بدون ما تدفع شي.":"No. The same Rawi code runs After Effects and Premiere on the same computer. If you already have Rawi, Premiere comes with the update at no extra cost.","Rawi راوي · إضافة عربية لـ After Effects و Premiere Pro":"Rawi · Arabic-first extension for After Effects and Premiere Pro","After Effects و Premiere Pro علامتان تجاريتان لشركة Adobe.":"After Effects and Premiere Pro are trademarks of Adobe.","تحميل راوي لـ After Effects و Premiere Pro":"Download Rawi for After Effects and Premiere Pro","أو":"or","راوي — إضافة After Effects و Premiere Pro":"Rawi — an extension for After Effects and Premiere Pro","عندك راوي على الماك؟ حدّثه بسطر واحد":"Rawi already on your Mac? Update it with one line","، والصق هذا السطر واضغط":", paste this line and press",". يحمّل آخر نسخة، ويثبّتها مكان القديمة ويحذف القديمة. التفعيل يبقى.":". It downloads the latest version, installs it in place of the old one and deletes the old one. Your activation stays.","انسخ السطر":"Copy the line","شلون أحدّث راوي على الماك؟":"How do I update Rawi on a Mac?","سكّر After Effects و Premiere Pro، وانسخ سطر التحديث من":"Close After Effects and Premiere Pro, copy the update line from the","صفحة التحميل":"download page","والصقه بالـ Terminal. يحمّل آخر نسخة ويثبّتها مكان القديمة، والتفعيل يبقى. على الويندوز: حمّل ملف التثبيت الجديد وثبّته فوق القديم.":"and paste it into Terminal. It downloads the latest version and installs it in place of the old one; your activation stays. On Windows: download the new installer and install it over the old one.","بشاشة التفعيل، والتجربة تتفعّل خلال ثواني.":"on the activation screen; the trial activates within seconds.","من شاشة التفعيل اضغط «اطلب تجربة يومين»، والتجربة تتفعّل خلال ثواني. التجربة مرة وحدة لكل جهاز.":"On the activation screen click “Request a 2-day trial” and the trial activates within seconds. One trial per computer.","كل الأدوات بدون استثناء لمدة يومين، ومرة وحدة لكل جهاز. بعد ما تخلص تگدر تشتري النسخة الكاملة وتفعّلها بنفس الشاشة.":"Every tool, no exceptions, for 2 days, once per computer. When it ends you can buy the full version and activate it on the same screen.","اضغط «اطلب تجربة يومين» — التجربة تتفعّل داخل الإضافة خلال ثواني.":"Click “Request a 2-day trial” — the trial activates inside the extension within seconds.","الأسهل: من داخل الإضافة اضغط «اطلب تجربة يومين» وتتفعّل خلال ثواني. أو اكتب رقم جهازك هنا (يطلع بشاشة التفعيل داخل راوي) ويطلعلك الكود بنفس الصفحة بعد الموافقة.":"Easiest: inside the extension click “Request a 2-day trial” and it activates within seconds. Or enter your device ID here (shown on Rawi's activation screen) and the code appears on this page once approved.","اشترك · من":"Subscribe · from","د.ع":"IQD","اشتراك سنوي أو شهري":"Yearly or monthly","الأوفر":"Best value","د.ع / سنة":"IQD / year","د.ع / شهر":"IQD / month","ادفع شهر بشهر":"Pay month by month","النسخة الكاملة بكل الأدوات والتحديثات طول مدة اشتراكك.":"The full version with every tool and update for as long as you are subscribed.","اشترك من المتجر":"Subscribe in the store","بالدفع الإلكتروني: اختار سنوي (":"with online payment: choose yearly (","د.ع) أو شهري (":"IQD) or monthly (","د.ع). بعد الدفع افتح راوي واضغط «دفعت؟ فعّل النسخة الكاملة» واكتب رقم الطلب أو رقم الهاتف اللي دفعت بيه، وتتفعّل النسخة الكاملة خلال دقايق.":"IQD). After paying, open Rawi, click “Paid? Activate the full version” and enter your order number or the phone number you paid with; the full version is active within minutes.","شنو يصير من يخلص الاشتراك؟":"What happens when my subscription ends?","راوي يرجع لشاشة التفعيل. تجدد من المتجر وتفعّل بنفس الطريقة: «دفعت؟ فعّل النسخة الكاملة» ورقم الطلب الجديد.":"Rawi goes back to the activation screen. Renew in the store and activate the same way: “Paid? Activate the full version” with the new order number.","النسخة الكاملة · سنوي":"Full version · yearly","د.ع · شهري":"IQD · monthly","اشتراك سنوي أو شهري. اشترك من المتجر، وبعدها من داخل راوي اضغط «دفعت؟ فعّل النسخة الكاملة» واكتب رقم الطلب — تتفعّل خلال دقايق.":"Yearly or monthly subscription. Subscribe in the store, then inside Rawi click “Paid? Activate the full version” and enter your order number — active within minutes.","أوفر من الشهري بـ":"Saves","تجربة يومين مجاناً، تتفعّل تلقائياً. من داخل الإضافة اضغط «اطلب تجربة يومين»، أو اكتب رقم جهازك هنا ويطلعلك كود التجربة بنفس اللحظة.":"A free 2-day trial that activates automatically. Inside the extension press «Request a 2-day trial», or enter your device number here and your trial code shows up right away.","⚠️ لا تكتب رقم هاتفك.":"⚠️ Don't enter your phone number.","رقم الجهاز يظهر بعد ما تثبّت الإضافة وتفتحها داخل":"The device number appears after you install the extension and open it inside","(من":"(from",")، بشاشة التفعيل. شكله مثل:":"), on the activation screen. It looks like:","فعّل التجربة الآن":"Activate the trial now","هذا رقم هاتف، مو رقم الجهاز. ثبّت الإضافة وافتحها داخل Premiere Pro أو After Effects، ورقم الجهاز يظهر بشاشة التفعيل.":"That's a phone number, not the device number. Install the extension and open it inside Premiere Pro or After Effects; the device number is on the activation screen.","✓ هذا كود التجربة مالتك (يومين). انسخه، والصقه بشاشة التفعيل داخل راوي واضغط «تفعيل».":"✓ Here is your 2-day trial code. Copy it, paste it on Rawi's activation screen and press «Activate».","راسلنا على تيليغرام":"Message us on Telegram","رقم الجهاز ما بيه الحروف I و L و O و U. انسخه من شاشة التفعيل داخل راوي.":"Device numbers never contain I, L, O or U. Copy it from the activation screen inside Rawi.","جاري التفعيل…":"Activating…","هذا الجهاز أخذ تجربته قبل. إذا تحتاج تجربة ثانية راسلنا على تيليغرام.":"This computer has already had its trial. If you need another one, message us on Telegram.","اكو طلب سابق لهذا الجهاز. راسلنا على تيليغرام ونرتبها.":"There is already a request for this computer. Message us on Telegram and we will sort it out.",". ينزّل بس الملفات اللي تغيّرت، ويتأكد من كل ملف قبل ما يبدّلها، والتفعيل يبقى. إذا راوي محدّث يكلك وما ينزّل شي، وإذا":". It downloads only the files that changed and checks every file before switching; your activation stays. If Rawi is already up to date it tells you and downloads nothing, and if","مفتوح ينتظرك تسكّره.":"is open it waits for you to close it.","والصقه بالـ Terminal. ينزّل بس الملفات اللي تغيّرت ويثبّتها مكان القديمة، والتفعيل يبقى. على الويندوز: حمّل ملف التثبيت الجديد وثبّته فوق القديم.":"and paste it in Terminal. It downloads only the files that changed and installs them in place of the old ones; your activation stays. On Windows: download the new installer and install it over the old one.","شهري، سنوي، أو مدى الحياة":"Monthly, yearly or lifetime","ج.م":"EGP","د.ع · مدى الحياة":"IQD · lifetime","دفعة وحدة بدون تجديد، وبيها كل التحديثات":"One payment, no renewal, all updates included","الدولار والجنيه المصري تقريبي حسب سعر الصرف اليوم، والدفع بالدينار العراقي.":"US dollar and Egyptian pound amounts are approximate at today's exchange rate; payment is in Iraqi dinars.","بالدفع الإلكتروني: اختار شهري (":"with online payment: choose monthly (","د.ع)، سنوي (":"IQD), yearly (","د.ع) أو مدى الحياة (":"IQD) or lifetime (","النسخة الكاملة · شهري":"Full version · monthly","· سنوي":"· yearly","· مدى الحياة":"· lifetime","بالدولار تقريباً:":"About, in US dollars:","— وبالجنيه المصري:":"— in Egyptian pounds:","ج.م (الدفع بالدينار العراقي).":"EGP (payment is in Iraqi dinars).","اشتراك شهري أو سنوي أو مدى الحياة. اشترك من المتجر، وبعدها من داخل راوي اضغط «دفعت؟ فعّل النسخة الكاملة» واكتب رقم الطلب — تتفعّل خلال دقايق.":"Monthly, yearly or lifetime. Subscribe in the store, then in Rawi click “Paid? Activate the full version” and enter your order number — it activates within minutes."}/*D*/;
+  var q = null, s = null; try { q = new URLSearchParams(location.search).get('lang'); } catch (e) {}
+  try { s = localStorage.getItem('rawi.lang'); } catch (e) {}
+  var ls = (navigator.languages && navigator.languages.length ? navigator.languages : [navigator.language || '']).join(',').toLowerCase();
+  var L = (q === 'en' || q === 'ar') ? q : (s === 'en' || s === 'ar') ? s : (/(^|,)ar/.test(ls) ? 'ar' : 'en');
+  if (q === 'en' || q === 'ar') { try { localStorage.setItem('rawi.lang', q); } catch (e) {} }
+  var N = function (x) { return String(x).replace(/\s+/g, ' ').trim(); };
+  window.RAWI_LANG = L;
+  window.T = function (a) { return L === 'en' && D[N(a)] ? D[N(a)] : a; };
+  var de = document.documentElement; de.lang = L; de.dir = L === 'en' ? 'ltr' : 'rtl';
+  function tr(root) {
+    if (L !== 'en') return;
+    var w = document.createTreeWalker(root, NodeFilter.SHOW_TEXT, null), n;
+    while ((n = w.nextNode())) {
+      var p = n.parentNode; if (!p || /^(SCRIPT|STYLE)$/.test(p.nodeName)) continue;
+      var v = n.nodeValue, k = N(v); if (!k) continue;
+      if (D[k]) n.nodeValue = v.match(/^\s*/)[0] + D[k] + v.match(/\s*$/)[0];
+      else if (/^[←\s]+$/.test(v)) n.nodeValue = v.replace(/←/g, '→');
+    }
+    var A = ['placeholder', 'aria-label', 'title', 'alt'];
+    Array.prototype.forEach.call(root.querySelectorAll('[placeholder],[aria-label],[title],[alt]'), function (el) {
+      A.forEach(function (a) { var v = el.getAttribute(a); if (v && D[N(v)]) el.setAttribute(a, D[N(v)]); });
+    });
+  }
+  function button() {
+    var b = document.createElement('button'); b.type = 'button'; b.className = 'langsw';
+    b.textContent = L === 'en' ? 'عربي' : 'EN'; b.setAttribute('aria-label', L === 'en' ? 'العربية' : 'English');
+    b.lang = L === 'en' ? 'ar' : 'en';
+    b.addEventListener('click', function () {
+      var to = L === 'en' ? 'ar' : 'en'; try { localStorage.setItem('rawi.lang', to); } catch (e) {}
+      var u = new URL(location.href); u.searchParams.set('lang', to); location.replace(u.toString());
+    });
+    var slot = document.querySelector('.top .wrap .btn.sm');
+    if (slot) slot.parentNode.insertBefore(b, slot); else { b.classList.add('float'); document.body.appendChild(b); }
+  }
+  document.addEventListener('DOMContentLoaded', function () {
+    tr(document.body);
+    if (L === 'en') { document.title = D[N(document.title)] || document.title; var m = document.querySelector('meta[name=description]'); if (m && D[N(m.content)]) m.content = D[N(m.content)]; }
+    button();
+  });
+})();
+</script>
+<style>
+  .langsw { font: 700 13px/1 system-ui, sans-serif; color: var(--text, #EAF3F2); background: transparent; border: 1px solid var(--line, rgba(137,170,176,.25)); border-radius: 999px; padding: 8px 12px; cursor: pointer; }
+  .langsw:hover { border-color: var(--mint, #7CF2C8); }
+  .top nav + .langsw, .top .langsw { margin-inline-start: 4px; }
+  .langsw.float { position: fixed; top: 14px; inset-inline-end: 14px; z-index: 30; background: rgba(10,19,23,.75); backdrop-filter: blur(8px); }
+  html[dir=ltr], html[dir=ltr] body { direction: ltr; }
+  html[dir=ltr] .card { text-align: left; }
+</style>
+<!--/I18N-->
+<main>
+  <img class="logo" src="/download/icon.png" alt="راوي">
+  <h1>تحميل راوي</h1>
+  <p class="sub">إضافة عربية لـ <bdi>After Effects</bdi> و <bdi>Premiere Pro</bdi> — التحميل يبدأ تلقائياً، وإذا ما بدأ اضغط الزر.</p>
+  <div class="meta"><span>ويندوز 10 و 11 · ماك</span><span><bdi>After Effects 2022</bdi> أو أحدث</span><span><bdi>Premiere Pro 2025</bdi> أو أحدث</span><span><bdi>v1.14.2</bdi></span></div>
+
+  <div class="card mob" id="mob">
+    <h2>راوي يشتغل على الكمبيوتر</h2>
+    <p class="s">إضافة لـ <bdi>After Effects</bdi> و <bdi>Premiere Pro</bdi> على ويندوز أو ماك. افتح هذا الرابط من كمبيوترك وحمّلها من هناك، والتجربة يومين مجاناً.</p>
+    <code class="cmd">rawiplugin.com/download</code>
+    <div class="mbt"><button type="button" class="p" id="mobShare">ابعث الرابط لنفسك</button><button type="button" class="g" id="mobCopy">انسخ الرابط</button></div>
+  </div>
+
+  <div class="os win">
+    <a id="dlWin" class="btn" href="https://github.com/Alialajanabi2003/rawi-downloads/releases/latest/download/Rawi-Setup.zip" download="Rawi-Setup.zip"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M12 4v11M7 10l5 5 5-5M5 20h14"/></svg> تحميل لويندوز</a>
+    <p class="alt">عندك ماك؟ <a href="#" data-os="mac">تحميل نسخة الماك</a> · تفضّل التثبيت اليدوي؟ <a href="https://github.com/Alialajanabi2003/rawi-downloads/releases/latest/download/Rawi-Manual.zip" download>ملفات الإضافة <bdi>ZIP</bdi></a></p>
+    <div class="card">
+      <h2>طريقة التثبيت على ويندوز</h2>
+      <ol>
+        <li id="stepWin">افتح الملف <bdi>Rawi-Setup.zip</bdi>، وبداخله دبل كلك على <bdi>Rawi-Setup.exe</bdi> واضغط تثبيت.</li>
+        <li>افتح <bdi>After Effects</bdi> أو <bdi>Premiere Pro</bdi> ← <bdi>Window</bdi> ← <bdi>Extensions</bdi> ← <b>Rawi</b>.</li>
+        <li>اضغط «اطلب تجربة يومين» — التجربة تتفعّل داخل الإضافة خلال ثواني.</li>
+      </ol>
+      <div class="ivslot" data-iv="win" hidden></div>
+      <p class="warn">إذا طلع تحذير ويندوز الأزرق: اضغط <b>More info</b> ثم <b>Run anyway</b> — لأن الملف جديد وغير موقّع رقمياً بعد.</p>
+    </div>
+  </div>
+
+  <div class="os mac">
+    <a id="dlMac" class="btn" href="https://github.com/Alialajanabi2003/rawi-downloads/releases/latest/download/Rawi-Mac.zip" download="Rawi-Mac.zip"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M12 4v11M7 10l5 5 5-5M5 20h14"/></svg> تحميل للماك</a>
+    <p class="alt">عندك ويندوز؟ <a href="#" data-os="win">تحميل نسخة ويندوز</a></p>
+    <div class="card upd" id="macupdate">
+      <h2>عندك راوي على الماك؟ حدّثه بسطر واحد</h2>
+      <p class="s">افتح <b>Terminal</b>، والصق هذا السطر واضغط <bdi>Enter</bdi>. ينزّل بس الملفات اللي تغيّرت، ويتأكد من كل ملف قبل ما يبدّلها، والتفعيل يبقى. إذا راوي محدّث يكلك وما ينزّل شي، وإذا <bdi>After Effects</bdi> أو <bdi>Premiere Pro</bdi> مفتوح ينتظرك تسكّره.</p>
+      <code class="cmd" id="macCmd">curl -fsSL https://rawiplugin.com/mac-update.sh | bash</code>
+      <button type="button" class="cpy" id="macCopy">انسخ السطر</button>
+    </div>
+    <div class="card">
+      <h2>طريقة التثبيت على الماك</h2>
+      <ol>
+        <li>فك ضغط <bdi>Rawi-Mac.zip</bdi> (دبل كلك) — يطلع مجلد <bdi>Rawi-Mac</bdi> داخل التنزيلات. <bdi>Safari</bdi> يفكه وحده.</li>
+        <li>سكّر <bdi>After Effects</bdi> و <bdi>Premiere Pro</bdi>، وافتح <b>Terminal</b> (<bdi>⌘ + Space</bdi> واكتب <bdi>Terminal</bdi>)، والصق هذا السطر واضغط <bdi>Enter</bdi>:
+          <code class="cmd">bash ~/Downloads/Rawi-Mac/install.sh</code></li>
+        <li>افتح <bdi>After Effects</bdi> أو <bdi>Premiere Pro</bdi> ← <bdi>Window</bdi> ← <bdi>Extensions</bdi> ← <b>Rawi</b>.</li>
+        <li>اضغط «اطلب تجربة يومين» — التجربة تتفعّل داخل الإضافة خلال ثواني.</li>
+      </ol>
+      <div class="ivslot" data-iv="mac" hidden></div>
+      <p class="warn">ما يطلب كلمة سر. إذا المجلد مو داخل التنزيلات: اكتب <bdi>bash</bdi> ومسافة، واسحب ملف <bdi>install.sh</bdi> للـ <bdi>Terminal</bdi> واضغط <bdi>Enter</bdi>.</p>
+      <p class="note2">على الماك كل القوالب والأدوات تشتغل، ومنها <b>الكابشن التلقائي</b>.</p>
+    </div>
+  </div>
+
+  <div class="card req" id="trial">
+    <h2>اطلب كود التجربة</h2>
+    <p class="s">تجربة يومين مجاناً، تتفعّل تلقائياً. من داخل الإضافة اضغط «اطلب تجربة يومين»، أو اكتب رقم جهازك هنا ويطلعلك كود التجربة بنفس اللحظة.</p>
+    <p class="rq-warn" id="rqWarn"><b>⚠️ لا تكتب رقم هاتفك.</b> رقم الجهاز يظهر بعد ما تثبّت الإضافة وتفتحها داخل <bdi>Premiere Pro</bdi> أو <bdi>After Effects</bdi> (من <bdi dir="ltr">Window → Extensions → Rawi</bdi>)، بشاشة التفعيل. شكله مثل: <bdi dir="ltr" class="ex">K7Q2M-9XA4P</bdi></p>
+    <form id="rqf" autocomplete="off">
+      <label for="rqDev">رقم الجهاز</label><input id="rqDev" class="ltr" placeholder="XXXXX-XXXXX" maxlength="24" inputmode="text" autocapitalize="characters" spellcheck="false" required>
+      <label for="rqName">اسمك</label><input id="rqName" maxlength="60" placeholder="مثلاً: أحمد">
+      <label for="rqContact">تليغرام أو انستغرام (اختياري)</label><input id="rqContact" maxlength="80" placeholder="حتى نتواصل وياك إذا احتجت مساعدة">
+      <input class="hp" id="rqWeb" tabindex="-1" aria-hidden="true" autocomplete="off">
+      <button type="submit" id="rqGo">فعّل التجربة الآن</button>
+    </form>
+    <div class="rq-msg" id="rqMsg"></div>
+    <a class="rq-tg" id="rqTg" href="#" target="_blank" rel="noopener" style="display:none">تابع طلبك على تيليغرام — يوصلك الكود والدعم هناك</a>
+    <div class="rq-code" id="rqCode"></div>
+    <button type="button" id="rqCopy" style="display:none">نسخ الكود</button>
+  </div>
+
+  <div class="card buy">
+    <h2>النسخة الكاملة · شهري <bdi dir="ltr">15,000</bdi> · سنوي <bdi dir="ltr">35,000</bdi> · مدى الحياة <bdi dir="ltr">75,000</bdi> د.ع</h2>
+    <p class="s fx">بالدولار تقريباً: <bdi dir="ltr" data-fx="usd" data-iqd="15000">$9.9</bdi> · <bdi dir="ltr" data-fx="usd" data-iqd="35000">$23.1</bdi> · <bdi dir="ltr" data-fx="usd" data-iqd="75000">$49.5</bdi> — وبالجنيه المصري: <bdi dir="ltr" data-fx="egp" data-iqd="15000">550</bdi> · <bdi dir="ltr" data-fx="egp" data-iqd="35000">1,290</bdi> · <bdi dir="ltr" data-fx="egp" data-iqd="75000">2,760</bdi> ج.م (الدفع بالدينار العراقي).</p>
+    <p class="s">اشتراك شهري أو سنوي أو مدى الحياة. اشترك من المتجر، وبعدها من داخل راوي اضغط «دفعت؟ فعّل النسخة الكاملة» واكتب رقم الطلب — تتفعّل خلال دقايق.</p>
+    <a class="buybtn" href="https://rawi.thewayl.com/?lang=en" target="_blank" rel="noopener">اشترك من المتجر</a>
+  </div>
+
+  <a class="tg" href="https://t.me/rawiplugin" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 4.5L2.8 11.3c-.8.3-.8 1.4 0 1.7l4.4 1.5 1.7 5.3c.2.7 1.1.9 1.6.4l2.5-2.4 4.6 3.4c.6.4 1.4.1 1.6-.6L22.2 5.7c.2-.8-.5-1.5-1.2-1.2z"/><path d="M7.2 14.5L18 7.5l-8.3 8"/></svg>
+    تحتاج مساعدة؟ راسلنا بالتليغرام</a>
+</main>
+<script>
+  // pick the download for this computer; start it once, shortly after the page opens (buttons stay for a retry)
+  var mac = /Mac/i.test(navigator.platform || '') || /Macintosh/i.test(navigator.userAgent || '');
+  var mobile = /Android|iPhone|iPad|iPod|Mobile/i.test(navigator.userAgent || '');
+  function setOS(o) { document.body.classList.remove('win', 'mac'); document.body.classList.add(o); }
+  setOS(mac ? 'mac' : 'win');
+  if (mobile) document.body.classList.add('mobile');
+  // Meta Pixel events (only when the pixel is on the page: tools/pixel.json)
+  function track(ev, p, custom, once) { try { if (window.rawiTrack) window.rawiTrack(ev, p, custom, once); } catch (e) {} }
+  [['dlWin', 'Rawi-Setup.zip'], ['dlMac', 'Rawi-Mac.zip']].forEach(function (x) {
+    document.getElementById(x[0]).addEventListener('click', function () { if (mobile) track('MobileDownloadClick', { file: x[1] }, true); else track('Lead', { content_name: x[1], content_category: 'download' }, false, true); });
+  });
+  [].forEach.call(document.querySelectorAll('a[href*="Rawi-Manual.zip"]'), function (a) { a.addEventListener('click', function () { if (!mobile) track('Lead', { content_name: 'Rawi-Manual.zip', content_category: 'download' }, false, true); }); });
+  [].forEach.call(document.querySelectorAll('.buybtn'), function (a) { a.addEventListener('click', function () { track('InitiateCheckout', { value: 35000, currency: 'IQD', content_name: 'Rawi Subscription', content_category: 'download_page' }); }); });
+  (function () {
+    var url = 'https://rawiplugin.com/download', sh = document.getElementById('mobShare'), cp = document.getElementById('mobCopy');
+    sh.addEventListener('click', function () {
+      track('MobileHandoff', { how: 'share' }, true);
+      if (navigator.share) navigator.share({ title: T('راوي — إضافة After Effects و Premiere Pro'), text: T('حمّل راوي من الكمبيوتر:'), url: url }).catch(function () {});
+      else location.href = 'https://t.me/share/url?url=' + encodeURIComponent(url);
+    });
+    cp.addEventListener('click', function () {
+      track('MobileHandoff', { how: 'copy' }, true);
+      function sel() { try { var c = document.querySelector('.mob code'), r = document.createRange(); r.selectNodeContents(c); var w = getSelection(); w.removeAllRanges(); w.addRange(r); } catch (e) {} }
+      try { navigator.clipboard.writeText(url).then(function () { cp.textContent = T('تم النسخ ✓'); }, sel); } catch (e) { sel(); }
+    });
+  })();
+  (function () {
+    var b = document.getElementById('macCopy'), c = document.getElementById('macCmd');
+    b.addEventListener('click', function () {
+      track('MacUpdateCopy', {}, true);
+      function sel() { try { var r = document.createRange(); r.selectNodeContents(c); var w = getSelection(); w.removeAllRanges(); w.addRange(r); } catch (e) {} }
+      try { navigator.clipboard.writeText(c.textContent).then(function () { b.textContent = T('تم النسخ ✓'); }, sel); } catch (e) { sel(); }
+    });
+  })();
+  [].forEach.call(document.querySelectorAll('[data-os]'), function (a) { a.addEventListener('click', function (e) { e.preventDefault(); var o = a.getAttribute('data-os'); setOS(o); document.getElementById(o === 'mac' ? 'dlMac' : 'dlWin').click(); }); });
+  // Firebase's free plan refuses .exe files, so Windows gets Rawi-Setup.zip (the installer inside it).
+  // If /config.json has "exe" (e.g. a Google Drive direct link), the button downloads the .exe from there instead.
+  var cfg = fetch('/config.json', { cache: 'no-store' }).then(function (r) { return r.json(); }).then(function (c) {
+    if (c && /^https:\/\//.test(c.exe || '')) { var w = document.getElementById('dlWin'); w.href = c.exe; w.removeAttribute('download'); document.getElementById('stepWin').innerHTML = T('افتح الملف <bdi>Rawi-Setup.exe</bdi> واضغط تثبيت.'); }
+  }).catch(function () {});
+  function go() { if (mobile) return; var t = setTimeout(fire, 1500), done = false; function fire() { if (done) return; done = true; clearTimeout(t); document.getElementById(mac ? 'dlMac' : 'dlWin').click(); } cfg.then(fire, fire); }
+  try { if (!sessionStorage.getItem('rawi-dl')) { sessionStorage.setItem('rawi-dl', '1'); setTimeout(go, 700); } }
+  catch (e) { setTimeout(go, 700); }
+</script>
+<script>
+  // trial from the page: automatic (Ali 2026-10-19) - the server signs a 2-day trial for this device at once, one per
+  // device, like «اطلب تجربة يومين» in the panel. If the server has no trial signer (or is still the older version) the
+  // request waits for the owner's approval as before and the code shows here when it is approved.
+  // The page keeps its own request secret (only this page can read the code back), saved BEFORE asking so a reload
+  // repeats the same request instead of using up the trial.
+  // The server address comes from /config.json ({"api": "https://script.google.com/macros/s/…/exec"}).
+  (function () {
+    var apiP = null;
+    function api() { if (!apiP) apiP = fetch('/config.json', { cache: 'no-store' }).then(function (r) { return r.json(); }).then(function (c) { if (!c || !/^(https:\/\/|http:\/\/(127\.0\.0\.1|localhost):)/.test(c.api || '')) throw new Error('config'); return c.api; }); apiP.catch(function () { apiP = null; }); return apiP; }
+    function apiGet(q) { return api().then(function (u) { return fetch(u + '?' + q, { cache: 'no-store' }); }).then(function (r) { return r.json(); }); }
+    function apiPost(r, b) { return api().then(function (u) { return fetch(u + '?r=' + r, { method: 'POST', body: JSON.stringify(b) }); }).then(function (x) { return x.json(); }); }
+    var K = 'rawi.pageReq', dev = document.getElementById('rqDev'), msg = document.getElementById('rqMsg'), box = document.getElementById('rqCode'), go = document.getElementById('rqGo'), cp = document.getElementById('rqCopy'), warn = document.getElementById('rqWarn'), timer = null;
+    var HELP = 'https://t.me/rawiplugin';
+    function norm(v) { return String(v || '').toUpperCase().replace(/[^0-9A-Z]/g, '').slice(0, 10); }
+    // a phone number instead of the device number: only digits, 11+ of them, or the usual phone starts (07…, 7[3-9]…, 964…, 00…)
+    function phoneLike(v) { var x = String(v || '').replace(/[\s\-+().]/g, ''); return /^\d{10,}$/.test(x) && (x.length > 10 || /^(07|7[3-9]|964|00|01)/.test(x)); }
+    var PHONE = T('هذا رقم هاتف، مو رقم الجهاز. ثبّت الإضافة وافتحها داخل Premiere Pro أو After Effects، ورقم الجهاز يظهر بشاشة التفعيل.');
+    function say(c, t) { msg.className = 'rq-msg' + (c ? ' ' + c : ''); msg.textContent = t; }
+    function phoneCheck(raw) { var p = phoneLike(raw) || phoneLike(norm(raw)); warn.classList.toggle('hot', p); if (p) say('err', PHONE); else if (msg.textContent === PHONE) say('', ''); return p; }
+    dev.addEventListener('input', function () { var raw = dev.value, n = norm(raw); phoneCheck(raw); dev.value = n.length > 5 ? n.slice(0, 5) + '-' + n.slice(5) : n; });
+    function load() { try { return JSON.parse(localStorage.getItem(K) || 'null'); } catch (e) { return null; } }
+    function save(v) { try { v ? localStorage.setItem(K, JSON.stringify(v)) : localStorage.removeItem(K); } catch (e) {} }
+    function secret() { var b = new Uint8Array(32); crypto.getRandomValues(b); return Array.prototype.map.call(b, function (x) { return ('0' + x.toString(16)).slice(-2); }).join(''); }
+    function show(code) { clearInterval(timer); tgA.style.display = 'none'; box.textContent = code; box.style.display = 'block'; cp.style.display = 'block'; go.disabled = true; say('ok', T('✓ هذا كود التجربة مالتك (يومين). انسخه، والصقه بشاشة التفعيل داخل راوي واضغط «تفعيل».')); }
+    function askUs(t) { clearInterval(timer); save(null); go.disabled = false; say('err', t); tgA.href = HELP; tgA.textContent = T('راسلنا على تيليغرام'); tgA.style.display = 'block'; }
+    cp.addEventListener('click', function () { try { navigator.clipboard.writeText(box.textContent); cp.textContent = T('تم النسخ ✓'); } catch (e) {} });
+    function poll() {
+      var q = load(); if (!q) return;
+      (q.secret ? apiPost('status', { id: q.id, device: q.device, secret: q.secret }) : apiGet('r=status&id=' + encodeURIComponent(q.id) + '&device=' + encodeURIComponent(q.device))).then(function (r) {
+        if (r.status === 'approved' && r.code) show(r.code);
+        else if (r.tg) tg(r.tg);
+        else if (r.status === 'rejected') { clearInterval(timer); save(null); go.disabled = false; say('err', T('ما انقبل الطلب') + (r.note ? ': ' + r.note : '.')); }
+      }).catch(function () {});
+    }
+    var tgA = document.getElementById('rqTg');
+    function tg(u) { if (u && /^https:\/\/t\.me\/\w+\?start=r[0-9a-f]{24}$/.test(u)) { tgA.href = u; tgA.style.display = 'block'; } }
+    function wait(q) { tg(q.tg); dev.value = q.device.slice(0, 5) + '-' + q.device.slice(5); go.disabled = true; say('ok', T('✓ وصل طلبك. الكود يطلع هنا تلقائياً خلال دقايق بعد الموافقة — خلي الصفحة مفتوحة.')); clearInterval(timer); timer = setInterval(poll, 10000); setTimeout(poll, 1200); }
+    document.getElementById('rqf').addEventListener('submit', function (e) {
+      e.preventDefault(); var raw = dev.value, d = norm(raw);
+      if (phoneCheck(raw)) { dev.focus(); return; }
+      if (d.length !== 10) { say('err', T('اكتب رقم الجهاز كامل (١٠ حروف وأرقام) مثل ما يطلع بشاشة التفعيل.')); return; }
+      if (/[ILOU]/.test(d)) { say('err', T('رقم الجهاز ما بيه الحروف I و L و O و U. انسخه من شاشة التفعيل داخل راوي.')); return; }
+      go.disabled = true; say('', T('جاري التفعيل…'));
+      var prev = load(), s = prev && prev.device === d && prev.secret || secret();
+      if (!prev || prev.secret !== s) save({ id: '', secret: s, device: d, at: Date.now(), tg: '' });
+      apiPost('request', { device: d, secret: s, id: prev && prev.device === d && prev.id || '', auto: 1, name: document.getElementById('rqName').value, contact: document.getElementById('rqContact').value, website: document.getElementById('rqWeb').value, platform: document.body.classList.contains('mac') ? 'mac' : 'win', source: 'site' })
+        .then(function (r) {
+          if (!r.ok && r.error === 'trial_used') { askUs(T('هذا الجهاز أخذ تجربته قبل. إذا تحتاج تجربة ثانية راسلنا على تيليغرام.')); return; }
+          if (!r.ok && r.error === 'request_exists') { askUs(T('اكو طلب سابق لهذا الجهاز. راسلنا على تيليغرام ونرتبها.')); return; }
+          if (!r.ok) { if (!(prev && prev.id)) save(null); go.disabled = false; say('err', r.error === 'rate' ? T('الطلبات كثيرة هسه. جرّب بعد ساعة.') : T('تأكد من رقم الجهاز وحاول مرة ثانية.')); return; }
+          var q = { id: r.id, secret: s, device: d, at: Date.now(), tg: r.tg || '' }; save(q);
+          try { if (window.rawiTrack && !r.again) window.rawiTrack('CompleteRegistration', { content_name: r.code ? 'site_trial_auto' : 'site_trial_request' }); } catch (e) {}
+          if (r.status === 'approved' && r.code) { show(r.code); return; }
+          wait(q);
+        }).catch(function () { go.disabled = false; say('err', T('ما گدرنا نوصل للسيرفر. تأكد من النت وحاول مرة ثانية.')); });
+    });
+    var q = load(); if (q && q.id && Date.now() - q.at < 7 * 864e5) wait(q);
+  })();
+</script>
+<script>
+  // ---- install videos (YouTube, unlisted). IDs come from tools/install_videos.json (tools/build_web.py writes them here).
+  //      Only a small thumbnail loads from YouTube until the visitor presses play, so nothing counts against the site quota.
+  (function () {
+    var IV = /*IV*/{"win": "jgZxtMjvuR4", "mac": "6Ttp1OS1Z0k"}/*IV*/;
+    function vid(s) { s = String(s || '').trim(); var m = s.match(/(?:youtu\.be\/|v=|embed\/|shorts\/|live\/)([\w-]{11})/); return m ? m[1] : (/^[\w-]{11}$/.test(s) ? s : ''); }
+    var ids = { win: vid(IV.win), mac: vid(IV.mac) };
+    function facade(id, label) {
+      var b = document.createElement('button'); b.type = 'button'; b.className = 'ivf'; b.setAttribute('aria-label', label);
+      b.innerHTML = '<img alt="" src="https://i.ytimg.com/vi/' + id + '/hqdefault.jpg"><span class="ivp"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5.5v13l11-6.5z" fill="currentColor"/></svg></span><span class="ivl">' + label + '</span>';
+      b.addEventListener('click', function () {
+        var f = document.createElement('iframe'); f.className = 'ivframe'; f.title = label;
+        f.src = 'https://www.youtube-nocookie.com/embed/' + id + '?autoplay=1&rel=0&modestbranding=1&playsinline=1';
+        f.allow = 'autoplay; encrypted-media; picture-in-picture; fullscreen'; f.allowFullscreen = true; b.replaceWith(f);
+      });
+      return b;
+    }
+    window.RAWI_IV = { ids: ids, facade: facade };
+    [].forEach.call(document.querySelectorAll('[data-iv]'), function (slot) {
+      var os = slot.getAttribute('data-iv'); if (!ids[os]) return;
+      slot.appendChild(facade(ids[os], os === 'mac' ? T('فيديو التثبيت على الماك') : T('فيديو التثبيت على ويندوز'))); slot.hidden = false;
+    });
+    var sec = document.getElementById('install'); if (!sec || (!ids.win && !ids.mac)) return;
+    var tabs = [].slice.call(sec.querySelectorAll('[data-ivtab]')), box = document.getElementById('ivBox');
+    var mac = /Mac/i.test(navigator.platform || '') || /Macintosh/i.test(navigator.userAgent || '');
+    function pick(os) { tabs.forEach(function (t) { t.setAttribute('aria-selected', String(t.getAttribute('data-ivtab') === os)); }); box.innerHTML = ''; box.appendChild(facade(ids[os], os === 'mac' ? T('فيديو التثبيت على الماك') : T('فيديو التثبيت على ويندوز'))); }
+    tabs.forEach(function (t) { var os = t.getAttribute('data-ivtab'); if (!ids[os]) t.hidden = true; t.addEventListener('click', function () { pick(os); }); });
+    sec.hidden = false; var nl = document.getElementById('navInstall'); if (nl) nl.hidden = false;
+    pick(ids[mac ? 'mac' : 'win'] ? (mac ? 'mac' : 'win') : (ids.win ? 'win' : 'mac'));
+  })();
+</script>
+<script>
+  // the price in US dollars and Egyptian pounds (approximate; payment is in Iraqi dinars): written with Google's rates of
+  // 26 Oct 2026 (1 USD = 1,516 IQD = 55.8 EGP; Iraq's official rate is 1,500 since 7 Oct 2026), refreshed from a live
+  // rate feed when it answers (sane values only)
+  (function () {
+    var R = { iqd: 1516, egp: 55.8 };
+    function put() {
+      document.querySelectorAll('[data-fx]').forEach(function (el) {
+        var usd = Number(el.getAttribute('data-iqd')) / R.iqd;
+        el.textContent = el.getAttribute('data-fx') === 'usd' ? '$' + (Math.round(usd * 10) / 10).toLocaleString('en-US') : (Math.round(usd * R.egp / 10) * 10).toLocaleString('en-US');
+      });
+    }
+    try { fetch('https://open.er-api.com/v6/latest/USD').then(function (r) { return r.json(); }).then(function (j) { var q = j && j.rates;
+      if (q && q.IQD > 1000 && q.IQD < 2000 && q.EGP > 30 && q.EGP < 120) { R.iqd = q.IQD; R.egp = q.EGP; put(); } }).catch(function () {}); } catch (e) {}
+  })();
+</script>
+</body>
+</html>
