@@ -3,7 +3,7 @@
 // GitHub Pages has no server redirects: the old installer links (rawiplugin.com/Rawi-Setup.zip, /download/Rawi-Mac.zip, ...)
 // go to the newest GitHub release, everything else to the home page
 (function () {
-  var GH = 'https://github.com/Alialajanabi2003/rawi-downloads/releases/latest/download/';
+  var GH = 'https://github.com/rawiplugin/rawi-downloads/releases/latest/download/';
   var p = location.pathname.replace(/\/+$/, ''), m = /^\/(?:download\/)?(Rawi-(?:Setup|Mac|Manual)\.zip|Rawi-Setup\.exe)$/.exec(p);
   if (m) location.replace(GH + (m[1] === 'Rawi-Setup.exe' ? 'Rawi-Setup.zip' : m[1]));
   else if (p === '/dl') location.replace('/download/' + location.search);

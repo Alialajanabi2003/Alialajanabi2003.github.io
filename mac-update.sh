@@ -17,7 +17,7 @@
 #   --force   reinstall the newest version even when it is already installed
 set -u
 SITE="${RAWI_SITE:-https://rawiplugin.com}"
-DL="${RAWI_DL:-https://github.com/Alialajanabi2003/rawi-downloads/releases/latest/download}"
+DL="${RAWI_DL:-https://github.com/rawiplugin/rawi-downloads/releases/latest/download}"
 CEP="${RAWI_CEP:-$HOME/Library/Application Support/Adobe/CEP}"
 DEST="$CEP/extensions"
 WORK="$CEP/rawi-install"
